@@ -1,0 +1,8 @@
+/**---- PENDIENTES ----**/
+Agregar etiquetas meta en header
+Buscar cómo subir proyecto php a github (BD y documentación) - buscar proyecto ecommerce que había bajado
+
+/**---- Styles ----**/
+
+Poppins (500)
+https://fonts.google.com/specimen/Poppins

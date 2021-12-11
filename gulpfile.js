@@ -49,9 +49,9 @@ function browsersyncReload(cb){
 
 // Watch Task
 function watchTask(){
-  watch('*.html', { ignoreInitial: false }, browsersyncReload);
-  watch('app/js/**/*.js', { ignoreInitial: false }, series(jsTask, browsersyncReload));
-  watch('app/scss/**/*.scss', { ignoreInitial: false }, series(scssTask, browsersyncReload));
+  // watch('*.html', { ignoreInitial: false }, browsersyncReload);
+  // watch('app/js/**/*.js', { ignoreInitial: false }, series(jsTask, browsersyncReload));
+  watch('app/scss/**/*.scss', { ignoreInitial: false }, series(scssTask));
 }
 
 // Public Gulp task
@@ -59,6 +59,6 @@ exports.imagesTask = imagesTask;
 
 // Default Gulp task
 exports.default = series(
-  browsersyncServe,
+  // browsersyncServe,
   watchTask
 );

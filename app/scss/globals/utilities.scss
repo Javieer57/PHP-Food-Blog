@@ -1,0 +1,29 @@
+@use "../util" as *;
+
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-white {
+	color: var(--white) !important;
+}
+
+.bg-dark {
+	background-color: var(--dark) !important;
+}
+
+.rounded {
+	border-radius: rem(3) !important;
+}
+
+.p-2 {
+	padding: rem(8) !important;
+}
+
+.p-3 {
+	padding: rem(12) !important;
+}

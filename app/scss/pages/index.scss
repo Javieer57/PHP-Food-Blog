@@ -1,0 +1,25 @@
+@use "../util" as *;
+
+.contenedor_busqueda {
+	border: 1px solid grey;
+	padding: 15px;
+	max-width: 200px;
+
+	form {
+		> * {
+			width: 100%;
+			display: block;
+			// padding: 10px;
+			font-weight: 500;
+		}
+
+		button {
+			margin-top: 15px;
+			border: none;
+			cursor: pointer;
+			font-size: rem(16);
+			// line-height: 1.2;
+			letter-spacing: 1px;
+		}
+	}
+}
