@@ -7,9 +7,8 @@
     <meta name='description' content='An amazing new project.' />
     <meta name='keywords' content='web developer, front-end developer, css3, html5, responsive, javascript, project' />
 
-    <meta name='viewport'
-        content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <base target='_blank' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <!-- <base target='_blank' /> -->
     <!-- <link rel='shortcut icon' href='./app/img/favicon.svg' type='image/x-icon' /> -->
 
     <!-- Poppins font -->
@@ -33,6 +32,10 @@
 </head>
 
 <body>
+    <header>
+        <h1><a href="<?php echo RUTA; ?>">Blog comida</a></h1>
+    </header>
+
     <form action="<?php echo RUTA; ?>/buscar.php" method="get" name="busqueda">
         <input type="text" name="busqueda" placeholder="Buscar...">
         <button type="submit">Buscar</button>

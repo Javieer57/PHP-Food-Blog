@@ -9,7 +9,7 @@ $bd_config = array(
 );
 
 $blog_config = array(
-	'post_por_pagina' => '3',
+	'post_por_pagina' => 2,
 	'carpeta_imagenes' => 'app/img/'
 );
 
