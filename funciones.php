@@ -19,14 +19,19 @@ function limpiarDatos($datos){
 	return $datos;
 }
 
+// Manejar envío de texto - redireccionar url correctamente
 function paginaActual(){
-	return isset($_GET['p']) ? (int)$_GET['p'] : 1;
+	$pagina_actual = (int)$_GET['p'];
+	
+	$pagina_actual = ($pagina_actual === 0) ? 1 : $pagina_actual;
+
+	return $pagina_actual;
 }
 
 function obtener_posts($post_por_pagina, $conexion){
 	$inicio = (paginaActual() > 1) ? paginaActual() * $post_por_pagina - $post_por_pagina : 0;
 
-	$sentencia = $conexion->prepare('SELECT  * FROM articulos LIMIT :inicio, :post_por_pagina');
+	$sentencia = $conexion->prepare('SELECT SQL_CALC_FOUND_ROWS * FROM articulos LIMIT :inicio, :post_por_pagina');
 
 	$sentencia->bindParam(':inicio', $inicio, PDO::PARAM_INT);
 	$sentencia->bindParam(':post_por_pagina', $post_por_pagina, PDO::PARAM_INT);
@@ -42,10 +47,6 @@ function obtener_post($conexion, $id_post){
 	return $sql->fetch();
 }
 
-function limpiarID($id){
-	return limpiarDatos($id);
-}
-
 
 function fecha($fecha){
 	$timestamp = strtotime($fecha);
@@ -58,4 +59,14 @@ function fecha($fecha){
 
 	$fecha = "{$dia} de {$mes} del {$year}";
 	return $fecha;
+}
+
+function calcularPaginas($conexion, $post_por_pagina){
+	$totalArticulos = $conexion->query('SELECT FOUND_ROWS() AS total');
+	$totalArticulos = $totalArticulos->fetch()['total'];
+
+	/* Ceil para redondear hacia arriba si no es número entero */
+	$numeroPaginas = ceil($totalArticulos / $post_por_pagina);
+
+	return $numeroPaginas;
 }
