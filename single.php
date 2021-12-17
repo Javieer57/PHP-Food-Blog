@@ -3,7 +3,7 @@
 require 'admin/config.php';
 require 'funciones.php'; 
 
-$conexion = conectar($bd_config);
+$conexion = conectarBD($bd_config);
 
 if (!$conexion) {
 	header('location: error.php');	

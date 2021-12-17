@@ -3,13 +3,14 @@
 define('RUTA', 'http://localhost/blog/');
 
 $bd_config = array(
+	'host' => 'localhost',
 	'BD' => 'practica_blog',
 	'user' => 'root',
 	'pass' => ''
 );
 
 $blog_config = array(
-	'post_por_pagina' => 1,
+	'post_por_pagina' => 2,
 	'carpeta_imagenes' => 'app/img/'
 );
 

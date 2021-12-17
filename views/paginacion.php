@@ -23,7 +23,7 @@
         
     <?php endfor; ?>
 
-    <?php if(paginaActual() === $paginas): ?>
+    <?php if(paginaActual() === (int)$paginas): ?>
         <li style="color:red;">&raquo;</li>
     <?php else: ?>
         <li>
