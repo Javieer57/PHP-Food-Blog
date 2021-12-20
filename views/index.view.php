@@ -17,7 +17,7 @@ require 'views/header.php';
         </a></h2>
 
     <p>
-        <?php echo fecha($articulo['fecha_articulo']); ?>
+        <?php echo formatearFecha($articulo['fecha_articulo']); ?>
     </p>
 
     <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$articulo['thumb_articulo']; ?>" alt="">

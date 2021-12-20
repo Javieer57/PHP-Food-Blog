@@ -1,9 +1,10 @@
 <?php
 
+require 'funciones_busqueda.php';
 
 /**
  * conectarBD
- * 
+ * Función para conectarnos la BD
  * @param  array $bd_config configuración general para conectar a BD
  * @return void PDO | false
  */
@@ -26,9 +27,9 @@ function conectarBD($bd_config){
 
 /**
  * limpiarDatos
- * Evita la inyección de código
+ * Función para limpiar cadenas de texto (convertir etiquetas HTML y carácteres especiales a entidades y quitar espacios) 
  * @param  string $datos información a limpiar
- * @return string datos limpios
+ * @return string datos limpios y carácteres especiales a entidades
  */
 function limpiarDatos($datos){
 	$datos = trim($datos);
@@ -39,10 +40,11 @@ function limpiarDatos($datos){
 	return $datos;
 }
 
+
 /**
  * paginaActual
- * calcula la página actual para la paginación
- * @return int 
+ * Función para calcula la página actual para la paginación
+ * @return int página actual
  */
 function paginaActual(){
 	/* Si $_GET['p'] existe, guarda el valor, sino, asigna 1 */
@@ -56,41 +58,46 @@ function paginaActual(){
 
 
 /**
- * obtener_posts
- *
- * @param  int $post_por_pagina 
+ * calcularPaginas
+ * Función para calcular el número de páginas que mostrará la paginación
  * @param  PDO $conexion
- * @return array
+ * @param  int $post_por_pagina
+ * @return int número páginas que abarcan los post
  */
-function obtener_posts($post_por_pagina, $conexion){
-	$inicio = (paginaActual() > 1) ? paginaActual() * $post_por_pagina - $post_por_pagina : 0;
+function calcularPaginas($conexion, $post_por_pagina, $tipo_de_busqueda, $busqueda = ''){
 
-	$sentencia = $conexion->prepare('SELECT SQL_CALC_FOUND_ROWS * FROM articulos LIMIT :inicio, :post_por_pagina');
+	if ($tipo_de_busqueda === 'todos') {
+		$sentencia = $conexion->prepare('SELECT * FROM articulos');
+		$sentencia->execute();
+		$sentencia = $sentencia->fetchAll();
+		$total_paginas = count($sentencia);
+	}
 
-	$sentencia->bindParam(':inicio', $inicio, PDO::PARAM_INT);
-	$sentencia->bindParam(':post_por_pagina', $post_por_pagina, PDO::PARAM_INT);
+	if ($tipo_de_busqueda === 'busqueda') {
+		$sentencia = $conexion->prepare('SELECT * 
+			FROM articulos 
+			WHERE titulo_articulo LIKE :busqueda
+			OR extracto_articulo LIKE :busqueda
+			OR contenido_articulo LIKE :busqueda');
+			
+		$sentencia->execute(array(":busqueda" => "%$busqueda%"));
+		$sentencia = $sentencia->fetchAll();
+		$total_paginas = count($sentencia);
+	}
 
-	$sentencia->execute();
-	
-	return $sentencia->fetchAll();
+	$numero_paginas = ceil($total_paginas / $post_por_pagina);
+
+	return $numero_paginas;
 }
 
-function obtener_post($conexion, $id_post){
-	$sql = $conexion->prepare('SELECT * FROM articulos WHERE id_articulo = :id');
-	$sql->execute(array(':id' => $id_post));
-	return $sql->fetch();
-}
 
-function buscar_posts($post_por_pagina, $conexion, $busqueda){
-	$sentencia = $conexion->prepare('SELECT * FROM articulos WHERE titulo_articulo LIKE :busqueda OR extracto_articulo LIKE :busqueda OR contenido_articulo LIKE :busqueda ');
-	$sentencia->execute(array(':busqueda' => "%$busqueda%"));
-	$resultado_busqueda = $sentencia->fetchAll();
-
-	return $resultado_busqueda;
-}
-
-
-function fecha($fecha){
+/**
+ * formatearFecha
+ * Función para dar formato al español a la fecha de un registro
+ * @param  string $fecha fecha en formato YYYY-MM-DD HH:MM:SS devuelva por consulta SQL
+ * @return string fecha formateada al español
+ */
+function formatearFecha($fecha){
 	$timestamp = strtotime($fecha);
 
 	$meses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
@@ -103,12 +110,3 @@ function fecha($fecha){
 	return $fecha;
 }
 
-function calcularPaginas($conexion, $post_por_pagina){
-	$totalArticulos = $conexion->query('SELECT FOUND_ROWS() AS total');
-	$totalArticulos = $totalArticulos->fetch()['total'];
-
-	/* Ceil para redondear hacia arriba si no es número entero */
-	$numeroPaginas = ceil($totalArticulos / $post_por_pagina);
-
-	return $numeroPaginas;
-}

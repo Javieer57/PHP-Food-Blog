@@ -9,11 +9,12 @@ if (!$_GET['busqueda']) {
 	header('Location: index.php');
 }
 
+$busqueda = limpiarDatos($_GET['busqueda']);
 $conexion = conectarBD($bd_config);
 
-$busqueda = limpiarDatos($_GET['busqueda']);
+$resultado_busqueda = obtenerPostPorBusqueda($conexion, $busqueda, $blog_config['post_por_pagina']);
 
-$resultado_busqueda = buscar_posts($blog_config['post_por_pagina'], $conexion, $busqueda);
+$total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'busqueda', $busqueda);
 
 require 'views/buscar.view.php';
 

@@ -10,7 +10,7 @@ if (!$conexion) {
 }
 
 $id_post =  (int)limpiarDatos($_GET['id']);
-$single_post = obtener_post($conexion, $id_post);
+$single_post = obtenerPostPorID($conexion, $id_post);
 
 /* Si no hay id en la URL o el id no existe en la BD... */
 if (!isset($id_post) || $single_post == false ) {
