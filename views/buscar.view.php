@@ -2,14 +2,16 @@
 require 'views/header.php';
 ?>
 
+<!-- :::::: Inicio de sección de resultados :::::: -->
 <h2>Resultados de <i><?php echo $busqueda; ?></i></h2>
 
-<!-- Imprimir Resultados -->
 <?php foreach($resultado_busqueda as $resultado): ?>
 <div class="">
-    <h2><a href="single.php?id=<?php echo $resultado['id_articulo']; ?>">
+    <h2>
+        <a href="single.php?id=<?php echo $resultado['id_articulo']; ?>">
             <?php echo $resultado['titulo_articulo']; ?>
-        </a></h2>
+        </a>
+    </h2>
 
     <p>
         <?php echo formatearFecha($resultado['fecha_articulo']); ?>
@@ -28,7 +30,6 @@ require 'views/header.php';
 
 
 <?php
-
 require 'views/paginacion.php';
 require 'views/footer.php';
 ?>

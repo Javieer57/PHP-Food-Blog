@@ -1,7 +1,10 @@
 /**---- PENDIENTES ----**/
 Agregar etiquetas meta en header
 Buscar cómo subir proyecto php a github (BD y documentación) - buscar proyecto ecommerce que había bajado
-
+- poner los require que todos los archivos usan, juntos
+- optimizar la forma en la que se calculan las páginas
+- ¿función para validar la conexión ?
+- mejorar la página de error
 /**---- Styles ----**/
 
 Poppins (500)
