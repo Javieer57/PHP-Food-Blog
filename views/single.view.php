@@ -10,7 +10,7 @@ require 'views/header.php';
 
     <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$single_post['thumb_articulo']; ?>" alt="">
     
-    <p><?php echo $single_post['contenido_articulo']; ?></p>
+    <p><?php echo nl2br($single_post['contenido_articulo']); ?></p>
 </div>
 
 <?php
