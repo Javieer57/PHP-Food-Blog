@@ -4,14 +4,14 @@ require 'header.php';
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login">
 	<label for="user">
 		Usuario:
-		<input type="text" name="usuario" id="user" placeholder="Usuario" value="<?php echo isset($_POST['usuario']) ? $_POST['usuario'] : '' ?>">
+		<input required type="text" name="usuario" id="user" placeholder="Usuario" value="<?php echo isset($_POST['usuario']) ? $_POST['usuario'] : '' ?>">
 	</label>
 	<br>
 	<br>
 	<br>
 	<label for="pass">
 		Constraseña:
-		<input type="password" name="pass" id="pass" placeholder="Contraseña">
+		<input required type="password" name="pass" id="pass" placeholder="Contraseña">
 	</label>
 	<br>
 	<br>

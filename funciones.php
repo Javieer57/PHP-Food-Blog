@@ -6,7 +6,7 @@ require 'funciones_busqueda.php';
  * conectarBD
  * Función para conectarnos la BD
  * @param  array $bd_config configuración general para conectar a BD
- * @return void PDO | false
+ * @return PDO | false
  */
 function conectarBD($bd_config){
 	try {
@@ -108,5 +108,16 @@ function formatearFecha($fecha){
 
 	$fecha = "{$dia} de {$mes} del {$year}";
 	return $fecha;
+}
+
+/**
+ * comprobarSesion
+ * Función para validar el inicio de sesión en los archivos de admin
+ * @return void
+ */
+function comprobarSesion(){
+	if (!isset($_SESSION['usuario'])) {
+		header('Location: login.php');
+	} 
 }
 
