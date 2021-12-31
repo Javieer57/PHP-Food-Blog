@@ -1,5 +1,12 @@
 @use "../util" as *;
 
+.divider {
+	background-color: var(--faded-gray);
+	height: 2px;
+	max-width: 30px;
+	margin: 15px auto 20px;
+}
+
 .text-uppercase {
 	text-transform: uppercase !important;
 }
