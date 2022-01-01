@@ -1,18 +1,19 @@
 <?php
 require 'views/header.php';
 ?>
-<div class="grid">
-    
-    <!-- :::::: Inicio de sección de artículos :::::: -->
+<!-- :::::: Inicio de sección de artículos :::::: -->
+<div class="grid">    
     <?php foreach($articulos as $articulo): ?>    
         <div class="card">
             <div class="card__img">
                 <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$articulo['thumb_articulo']; ?>" alt="">
             </div>
             <div class="card__contenido">
-                <h3 class="card__title">
-                    <?php echo $articulo['titulo_articulo']; ?>
-                </h3>
+                <a href="single.php?id=<?php echo $articulo['id_articulo']; ?>">
+                    <h3 class="card__title">
+                        <?php echo $articulo['titulo_articulo']; ?>
+                    </h3>
+                </a>
                 <div class="divider"></div>
                 <p class="card__text">
                     <?php echo $articulo['extracto_articulo']; ?>

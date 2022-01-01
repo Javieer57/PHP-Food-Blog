@@ -20,14 +20,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <!-- Feather Icons -->
-    <!-- <script defer src='https://unpkg.com/feather-icons'></script> -->
+    <script defer src='https://unpkg.com/feather-icons'></script>
 
     <!-- Main Style -->
     <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/styles.css' />
 
     <!-- Main Script -->
+    
+    <script defer src="<?php echo RUTA; ?>dist/jquery.min.js"></script>
+    <script defer src="<?php echo RUTA; ?>dist/owl.carousel.min.js"></script>
+    
     <script defer src='<?php echo RUTA; ?>dist/main.js'></script>
-
     <title>Práctica Blog</title>
 </head>
 
