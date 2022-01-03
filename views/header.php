@@ -16,13 +16,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Fontawesome icons -->
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+        crossorigin="anonymous"
+    />
 
     <!-- Feather Icons -->
     <script defer src='https://unpkg.com/feather-icons'></script>
 
     <!-- Main Style -->
+    <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/owl.carousel.min.css' />
     <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/styles.css' />
 
     <!-- Main Script -->
