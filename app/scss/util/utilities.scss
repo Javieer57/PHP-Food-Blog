@@ -5,23 +5,20 @@
 	margin: 15px auto 20px;
 }
 
-.separador {
-	background-color: var(--faded-gray);
-	height: 2px;
-	max-width: 30px;
-	margin: 15px auto 20px;
-}
-
 %transicion {
 	transition: all ease 0.3s;
 }
 
-.text-uppercase {
-	text-transform: uppercase !important;
+.text_uppercase {
+	text-transform: uppercase;
 }
 
-.text-center {
-	text-align: center !important;
+.text_capitalize {
+	text-transform: capitalize;
+}
+
+.text_center {
+	text-align: center;
 }
 
 .text-white {

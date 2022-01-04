@@ -31,12 +31,11 @@
     <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/owl.carousel.min.css' />
     <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/styles.css' />
 
-    <!-- Main Script -->
-    
+    <!-- JS -->
     <script defer src="<?php echo RUTA; ?>dist/jquery.min.js"></script>
     <script defer src="<?php echo RUTA; ?>dist/owl.carousel.min.js"></script>
     
-    <script defer src='<?php echo RUTA; ?>dist/main.js'></script>
+    <script defer src='<?php echo RUTA; ?>dist/script.js'></script>
     <title>Práctica Blog</title>
 </head>
 
