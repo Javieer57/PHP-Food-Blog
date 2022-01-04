@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 <h1>Nuevo post</h1>
 
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']).$post['id_articulo']; ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']).$post['id']; ?>" method="post" enctype="multipart/form-data">
 	<label for="titulo">Título
 	<input require type="text" name="titulo" id="titulo" value="<?php echo isset($_POST['titulo']) ? $_POST['titulo'] : '' ?>">
 	</label>

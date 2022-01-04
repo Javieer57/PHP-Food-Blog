@@ -16,7 +16,7 @@ if (!isset($id) || empty($id)) {
 	header('Location: index.php');
 }
 
-$sentencia = $conexion->prepare('DELETE FROM articulos WHERE id_articulo = :id');
+$sentencia = $conexion->prepare('DELETE FROM articulos WHERE id = :id');
 $sentencia->execute(array(":id" => $id));
 
 header('Location: index.php');

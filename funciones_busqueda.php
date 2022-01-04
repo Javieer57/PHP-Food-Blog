@@ -38,7 +38,7 @@ function obtenerPostPorID($conexion, $id_post){
 	$sentencia = $conexion->prepare(
 		'SELECT * 
 		FROM articulos 
-		WHERE id_articulo = :id LIMIT 1'
+		WHERE id = :id LIMIT 1'
 	);
 
 	$sentencia->execute(array(':id' => $id_post));

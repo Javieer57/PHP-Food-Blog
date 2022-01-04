@@ -12,13 +12,13 @@ require 'header.php';
 <?php foreach($articulos as $articulo): ?>
 <div class="">
     <h2>
-		<?php echo $articulo['titulo_articulo']; ?>        
+		<?php echo $articulo['title']; ?>        
     </h2>
 
 	
-    <a href="editar.php?id=<?php echo $articulo['id_articulo']; ?>">Editar</a>
-    <a href="../single.php?id=<?php echo $articulo['id_articulo']; ?>">Ver</a>
-    <a href="borrar.php?id=<?php echo $articulo['id_articulo']; ?>">Borrar</a>
+    <a href="editar.php?id=<?php echo $articulo['id']; ?>">Editar</a>
+    <a href="../single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
+    <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
 </div>
 <?php endforeach; ?>
 

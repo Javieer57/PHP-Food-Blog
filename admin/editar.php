@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$sentencia = $conexion->prepare(
 		"UPDATE articulos 
 		SET titulo_articulo = :titulo , extracto_articulo = :extracto, contenido_articulo = :contenido, thumb_articulo = :thumb
-		WHERE id_articulo = :id"
+		WHERE id = :id"
 	);
 
 	$sentencia->execute(array(
