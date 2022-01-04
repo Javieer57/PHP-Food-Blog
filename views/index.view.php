@@ -7,7 +7,7 @@ require 'views/header.php';
     <?php foreach($articulos as $articulo): ?>    
         <div class="card text_center">
             <div class="card__img">
-                <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$articulo['thumb_articulo']; ?>" alt="">
+                <img src="<?php echo BASE_URL.$blog_config['carpeta_imagenes'].$articulo['thumb_articulo']; ?>" alt="">
             </div>
             <div class="card__contenido">
                 <a href="single.php?id=<?php echo $articulo['id_articulo']; ?>">

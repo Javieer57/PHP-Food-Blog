@@ -17,7 +17,7 @@ require 'views/header.php';
         <?php echo formatearFecha($resultado['fecha_articulo']); ?>
     </p>
 
-    <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$resultado['thumb_articulo']; ?>" alt="">
+    <img src="<?php echo BASE_URL.$blog_config['carpeta_imagenes'].$resultado['thumb_articulo']; ?>" alt="">
 
     <p>
         <?php echo $resultado['extracto_articulo']; ?>

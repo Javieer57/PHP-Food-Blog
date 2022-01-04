@@ -1,6 +1,9 @@
 <?php
+session_start();
+// connect to database
+$conn = conectarBD($bd_config);
 
-define('RUTA', 'http://localhost/blog/');
+define('BASE_URL', 'http://localhost/blog/');
 
 $bd_config = array(
 	'host' => 'localhost',
@@ -8,6 +11,7 @@ $bd_config = array(
 	'user' => 'root',
 	'pass' => ''
 );
+
 
 $blog_config = array(
 	'post_por_pagina' => 4,
@@ -18,5 +22,4 @@ $blog_admin = array(
 	'usuario' => 'Javier',
 	'password' => '123'
 );
-
 ?>

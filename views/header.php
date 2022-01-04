@@ -28,23 +28,23 @@
     <script defer src='https://unpkg.com/feather-icons'></script>
 
     <!-- Main Style -->
-    <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/owl.carousel.min.css' />
-    <link rel='stylesheet' type='text/css' href='<?php echo RUTA; ?>dist/styles.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>dist/owl.carousel.min.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>dist/styles.css' />
 
     <!-- JS -->
-    <script defer src="<?php echo RUTA; ?>dist/jquery.min.js"></script>
-    <script defer src="<?php echo RUTA; ?>dist/owl.carousel.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>dist/jquery.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>dist/owl.carousel.min.js"></script>
     
-    <script defer src='<?php echo RUTA; ?>dist/script.js'></script>
+    <script defer src='<?php echo BASE_URL; ?>dist/script.js'></script>
     <title>Práctica Blog</title>
 </head>
 
 <body>
     <header>
-        <h1><a href="<?php echo RUTA; ?>">Blog comida</a></h1>
+        <h1><a href="<?php echo BASE_URL; ?>">Blog comida</a></h1>
     </header>
 
-    <form action="<?php echo RUTA; ?>buscar.php" method="get" name="busqueda">
+    <form action="<?php echo BASE_URL; ?>buscar.php" method="get" name="busqueda">
         <input type="text" name="busqueda" placeholder="Buscar...">
         <button type="submit">Buscar</button>
     </form>

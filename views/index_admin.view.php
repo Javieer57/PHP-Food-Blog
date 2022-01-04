@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 <h1>Admin</h1>
 <a href="nuevo_post.php">Nuevo post</a>
-<a href="<?php echo RUTA; ?>cerrar.php">Cerrar sesión</a>
+<a href="<?php echo BASE_URL; ?>cerrar.php">Cerrar sesión</a>
 
 <br><br><br>
 

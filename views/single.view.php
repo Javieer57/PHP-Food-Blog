@@ -8,7 +8,7 @@ require 'views/header.php';
 
     <p><?php echo formatearFecha($single_post['fecha_articulo']); ?></p>
 
-    <img src="<?php echo RUTA.$blog_config['carpeta_imagenes'].$single_post['thumb_articulo']; ?>" alt="">
+    <img src="<?php echo BASE_URL.$blog_config['carpeta_imagenes'].$single_post['thumb_articulo']; ?>" alt="">
     
     <p><?php echo nl2br($single_post['contenido_articulo']); ?></p>
 </div>
