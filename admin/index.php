@@ -7,7 +7,7 @@ comprobarSesion();
 
 /* Conectamos a BD y traemos los post */
 $conexion = conectarBD($bd_config);
-$articulos = obtenerTodosLosPost($blog_config['post_por_pagina'], $conexion);
+$articulos = getAllPost($blog_config['post_por_pagina'], $conexion);
 
 /* Si no hay conexión o no hay artículos */
 if (!$conexion) {

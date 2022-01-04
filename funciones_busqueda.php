@@ -1,12 +1,12 @@
 <?php
 /**
- * obtenerTodosLosPost
+ * getAllPost
  * busca los post a mostrar desde la BD 
  * @param  int $post_por_pagina 
  * @param  PDO $conexion
  * @return array 
  */
-function obtenerTodosLosPost($post_por_pagina, $conexion){
+function getAllPost($post_por_pagina, $conexion){
 	// Determinamos desde que post se mostrara en pantalla
 	$inicio = (paginaActual() > 1) ? paginaActual() * $post_por_pagina - $post_por_pagina : 0;
 
