@@ -26,7 +26,7 @@ $total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'to
 ?>
 
 <?php require_once(ROOT_PATH . '/views/header.php');?>
-<title>Cook Blog | Home</title>
+<title>Home | Cook Blog</title>
 </head>
 
 <body>
@@ -34,15 +34,15 @@ $total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'to
     <?php require_once(ROOT_PATH . '/views/navbar.view.php');?>
     <!-- :::::: End Navbar :::::: -->
 
-    <!-- :::::: Start posts :::::: -->
+    <!-- :::::: Start Posts :::::: -->
     <div class="grid">
         <?php foreach($posts as $post): ?>
         <div class="card text_center">
             <div class="card__img">
-                <img src="<?php echo BASE_URL . $blog_config['carpeta_imagenes'] . $post['image']; ?>" alt="">
+                <img src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
             </div>
             <div class="card__contenido">
-                <a href="single.php?id=<?php echo $post['id']; ?>">
+                <a href="single_post.php?id=<?php echo $post['id']; ?>">
                     <h3 class="card__title text_capitalize">
                         <?php echo $post['title']; ?>
                     </h3>
@@ -51,13 +51,15 @@ $total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'to
                 <p class="card__text">
                     <?php echo $post['info']; ?>
                 </p>
-                <a href="single.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
+                <a href="single_post.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
             </div>
         </div>
         <?php endforeach; ?>
-    </div><!-- :::::: End Navbar :::::: -->
+    </div><!-- :::::: End Posts :::::: -->
 
-    <?php
-require 'views/paginacion.php';
-require 'views/footer.php';
-?>
+    <!-- :::::: Start Pagination :::::: -->
+    <?php require_once(ROOT_PATH . '/views/paginacion.php'); ?>
+    <!-- :::::: End Pagination :::::: -->
+
+    <!-- :::::: Start Footer :::::: -->
+    <?php require_once(ROOT_PATH . '/views/footer.php'); ?>

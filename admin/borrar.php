@@ -6,7 +6,7 @@ require '../funciones.php';
 comprobarSesion();
 
 $conexion = conectarBD($bd_config);
-$id = limpiarDatos($_GET['id']);
+$id = sanitizeData($_GET['id']);
 
 if (!$conexion) {
 	header('Location: ../error.php');

@@ -10,8 +10,8 @@ if (isset($_SESSION['usuario'])) {
 
 /* Validamos los datos que se hayan enviado por el formulario */
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$nombre = limpiarDatos($_POST['usuario']);
-	$pass = limpiarDatos($_POST['pass']);
+	$nombre = sanitizeData($_POST['usuario']);
+	$pass = sanitizeData($_POST['pass']);
 	$errores = '';
 
 	if (empty($nombre) || empty($pass)) {

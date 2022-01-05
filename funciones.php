@@ -3,7 +3,6 @@
 require 'funciones_busqueda.php';
 
 /**
- * conectarBD
  * Función para conectarnos la BD
  * @param  array $bd_config configuración general para conectar a BD
  * @return PDO | false
@@ -24,39 +23,19 @@ function conectarBD($bd_config){
 	}
 }
 
-function getPosts(){
-	global $conn;
-	global $num_posts;
-
-	$start = (paginaActual() > 1) ? paginaActual() * $num_posts - $num_posts : 0;
-	
-	$sql = "SELECT * FROM articulos LIMIT :start, :num_posts";
-
-	$conn = $conn->prepare($sql);
-	$conn->bindParam(':start', $start, PDO::PARAM_INT);
-	$conn->bindParam(':num_posts', $num_posts, PDO::PARAM_INT);
-	
-	$conn->execute();
-	
-	$posts = $conn->fetchAll();
-
-	return $posts;
-}
-
 
 /**
- * limpiarDatos
- * Función para limpiar cadenas de texto (convertir etiquetas HTML y carácteres especiales a entidades y quitar espacios) 
- * @param  string $datos información a limpiar
- * @return string datos limpios y carácteres especiales a entidades
+ * prevent SQL injections
+ * @param  string $data 
+ * @return string
  */
-function limpiarDatos($datos){
-	$datos = trim($datos);
-	$datos = stripslashes($datos);
-	$datos = htmlspecialchars($datos);
-	$datos = filter_var($datos, FILTER_SANITIZE_STRING);
+function sanitizeData($data){
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	$data = filter_var($data, FILTER_SANITIZE_STRING);
 
-	return $datos;
+	return $data;
 }
 
 
@@ -111,12 +90,12 @@ function calcularPaginas($conexion, $post_por_pagina, $tipo_de_busqueda, $busque
 
 
 /**
- * formatearFecha
+ * formatDate
  * Función para dar formato al español a la fecha de un registro
  * @param  string $fecha fecha en formato YYYY-MM-DD HH:MM:SS devuelva por consulta SQL
  * @return string fecha formateada al español
  */
-function formatearFecha($fecha){
+function formatDate($fecha){
 	$timestamp = strtotime($fecha);
 
 	$meses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
@@ -139,4 +118,3 @@ function comprobarSesion(){
 		header('Location: login.php');
 	} 
 }
-

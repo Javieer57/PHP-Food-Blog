@@ -18,7 +18,7 @@ $num_posts = 4;
 
 $blog_config = array(
 	'post_por_pagina' => 4,
-	'carpeta_imagenes' => 'app/img/'
+	'images' => 'app/img/'
 );
 
 $blog_admin = array(

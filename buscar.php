@@ -14,7 +14,7 @@ if (!$_GET['busqueda']) {
 $conexion = conectarBD($bd_config);
 
 /* Validamos la búsqueda y buscamos resultados */
-$busqueda = limpiarDatos($_GET['busqueda']);
+$busqueda = sanitizeData($_GET['busqueda']);
 $resultado_busqueda = obtenerPostPorBusqueda($conexion, $busqueda, $blog_config['post_por_pagina']);
 
 /* Calculamos páginas para paginación */

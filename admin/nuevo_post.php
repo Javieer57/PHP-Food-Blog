@@ -12,10 +12,10 @@ if (!$conexion) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
-	$titulo = limpiarDatos($_POST['titulo']);
-	$extracto = limpiarDatos($_POST['extracto']);
-	$contenido = limpiarDatos($_POST['contenido']);
-	$thumb = limpiarDatos($_FILES['thumb']['tmp_name']);
+	$titulo = sanitizeData($_POST['titulo']);
+	$extracto = sanitizeData($_POST['extracto']);
+	$contenido = sanitizeData($_POST['contenido']);
+	$thumb = sanitizeData($_FILES['thumb']['tmp_name']);
 
 	$errores = '';
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
 		$check = @getimagesize($_FILES['thumb']['tmp_name']);
 
 		/* Especifica en qué carpeta se guardará el archivo */
-		$carpeta_destino = $blog_config['carpeta_imagenes'];
+		$carpeta_destino = $blog_config['images'];
 
 		/* Define el nombre del contenedor que recibirá al archivo temporal */
 		$contenedor_archivo = $carpeta_destino . $_FILES['thumb']['name'];

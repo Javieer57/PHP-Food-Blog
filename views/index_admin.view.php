@@ -17,7 +17,7 @@ require 'header.php';
 
 	
     <a href="editar.php?id=<?php echo $articulo['id']; ?>">Editar</a>
-    <a href="../single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
+    <a href="../single_post.php?id=<?php echo $articulo['id']; ?>">Ver</a>
     <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
 </div>
 <?php endforeach; ?>

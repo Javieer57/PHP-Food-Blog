@@ -1,6 +1,5 @@
 <?php
 /**
- * getAllPost
  * busca los post a mostrar desde la BD 
  * @param  int $post_por_pagina 
  * @param  PDO $conexion
@@ -23,27 +22,48 @@ function getAllPost($post_por_pagina, $conexion){
 	return $sentencia->fetchAll();
 }
 
+/**
+ * Returns all posts
+ * @return array all found posts
+ */
+function getPosts(){
+	// use global $conn object in function
+	global $conn;
+	// use global $num_posts in function
+	global $num_posts;
+
+	// calc the start post for pagination
+	$start = (paginaActual() > 1) ? paginaActual() * $num_posts - $num_posts : 0;
+
+	$sql = "SELECT * FROM articulos LIMIT :start, :num_posts";
+	$conn = $conn->prepare($sql);
+	$conn->bindParam(':start', $start, PDO::PARAM_INT);
+	$conn->bindParam(':num_posts', $num_posts, PDO::PARAM_INT);	
+	$conn->execute();	
+	$posts = $conn->fetchAll();
+
+	return $posts;
+}
+
 
 /**
- * obtenerPostPorID
- * Función para obtener un único post de BD basado en el id de $_GET
- * @param  PDO $conexion
- * @param  int $id_post número de id del post obtenido desde $_GET
- * @return array arreglo con la información del registro en BD
+ * Returns a single post
+ * @param  int $post_id
+ * @return array found post
  */
-function obtenerPostPorID($conexion, $id_post){
-	// Evitamos la inyección de código por el id
-	$id_post = limpiarDatos($id_post);
+function getPost($post_id){
+	// use global $conn object in function
+	global $conn;
 	
-	$sentencia = $conexion->prepare(
-		'SELECT * 
-		FROM articulos 
-		WHERE id = :id LIMIT 1'
-	);
+	$post_id = sanitizeData($post_id);
 
-	$sentencia->execute(array(':id' => $id_post));
+	$sql = 'SELECT * FROM articulos WHERE id = :id LIMIT 1';
+	$conn = $conn->prepare($sql);
+	$conn->execute(array(':id' => $post_id));
+	$post = $conn->fetch();
 
-	return $sentencia->fetch();
+	/* Bug: Even with the wrong id, the function returns a post if the first number matches in the database */
+	return $post;
 }
 
 
@@ -56,7 +76,7 @@ function obtenerPostPorID($conexion, $id_post){
  */
 function obtenerPostPorBusqueda($conexion, $busqueda, $post_por_pagina){
 	// Evitamos la inyección de código por la búsqueda
-	$busqueda = limpiarDatos($_GET['busqueda']);
+	$busqueda = sanitizeData($_GET['busqueda']);
 
 	// Determinamos desde que post se mostrara en pantalla
 	$inicio = (paginaActual() > 1) ? paginaActual() * $post_por_pagina - $post_por_pagina : 0;

@@ -13,12 +13,12 @@ if (!$conexion) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$id = limpiarDatos($_POST['id']);
-	$titulo = limpiarDatos($_POST['titulo']);
-	$extracto = limpiarDatos($_POST['extracto']);
-	$contenido = limpiarDatos($_POST['contenido']);
-	$thumb = limpiarDatos($_FILES['thumb']['name']);
-	$thumb_guardada = limpiarDatos($_POST['thumb-guardada']);
+	$id = sanitizeData($_POST['id']);
+	$titulo = sanitizeData($_POST['titulo']);
+	$extracto = sanitizeData($_POST['extracto']);
+	$contenido = sanitizeData($_POST['contenido']);
+	$thumb = sanitizeData($_FILES['thumb']['name']);
+	$thumb_guardada = sanitizeData($_POST['thumb-guardada']);
 
 	if (empty($thumb)) {
 			$thumb = $thumb_guardada;
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$check = @getimagesize($_FILES['thumb']['tmp_name']);
 
 		/* Especifica en qué carpeta se guardará el archivo */
-		$carpeta_destino = $blog_config['carpeta_imagenes'];
+		$carpeta_destino = $blog_config['images'];
 
 		/* Define el nombre del contenedor que recibirá al archivo temporal */
 		$contenedor_archivo = $carpeta_destino . $_FILES['thumb']['name'];
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	header('Location: index.php');
 } else {
-	$post = obtenerPostPorID($conexion, $_GET['id']);
+	$post = getPost($conexion, $_GET['id']);
 	if (!$post) {
 		header('Location: error.php');
 	}
