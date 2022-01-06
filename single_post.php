@@ -1,3 +1,4 @@
+<!-- the first include should be config.php -->
 <?php require_once('admin/config.php'); ?>
 <?php define ('ROOT_PATH', realpath(dirname(__FILE__))); ?>
 <?php require_once(ROOT_PATH . '/funciones.php'); ?>

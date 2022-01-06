@@ -36,11 +36,11 @@ function getPosts(){
 	$start = (paginaActual() > 1) ? paginaActual() * $num_posts - $num_posts : 0;
 
 	$sql = "SELECT * FROM articulos LIMIT :start, :num_posts";
-	$conn = $conn->prepare($sql);
-	$conn->bindParam(':start', $start, PDO::PARAM_INT);
-	$conn->bindParam(':num_posts', $num_posts, PDO::PARAM_INT);	
-	$conn->execute();	
-	$posts = $conn->fetchAll();
+	$statement = $conn->prepare($sql);
+	$statement->bindParam(':start', $start, PDO::PARAM_INT);
+	$statement->bindParam(':num_posts', $num_posts, PDO::PARAM_INT);	
+	$statement->execute();	
+	$posts = $statement->fetchAll();
 
 	return $posts;
 }

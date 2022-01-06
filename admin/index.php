@@ -16,7 +16,7 @@ if (!$conexion) {
 };
 
 /* Calculamos todas las páginas que necesita la paginación */
-$total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'todos');
+$total_paginas = calcPages($conexion, $blog_config['post_por_pagina'], 'todos');
 
 require '../views/index_admin.view.php'; 
 ?>

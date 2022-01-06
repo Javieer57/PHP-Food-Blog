@@ -18,7 +18,7 @@ $busqueda = sanitizeData($_GET['busqueda']);
 $resultado_busqueda = obtenerPostPorBusqueda($conexion, $busqueda, $blog_config['post_por_pagina']);
 
 /* Calculamos páginas para paginación */
-$total_paginas = calcularPaginas($conexion, $blog_config['post_por_pagina'], 'busqueda', $busqueda);
+$total_paginas = calcPages($conexion, $blog_config['post_por_pagina'], 'busqueda', $busqueda);
 
 require 'views/buscar.view.php';
 

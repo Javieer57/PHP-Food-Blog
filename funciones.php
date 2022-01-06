@@ -56,23 +56,25 @@ function paginaActual(){
 
 
 /**
- * calcularPaginas
- * Función para calcular el número de páginas que mostrará la paginación
- * @param  PDO $conexion
+ * Calculate the number of pages for the pagination
  * @param  int $post_por_pagina
  * @return int número páginas que abarcan los post
  */
-function calcularPaginas($conexion, $post_por_pagina, $tipo_de_busqueda, $busqueda = ''){
+function calcPages($tipo_de_busqueda, $busqueda = ''){	
+	global $conn;
+	global $num_posts;
 
-	if ($tipo_de_busqueda === 'todos') {
-		$sentencia = $conexion->prepare('SELECT * FROM articulos');
-		$sentencia->execute();
-		$sentencia = $sentencia->fetchAll();
-		$total_paginas = count($sentencia);
+	
+	if ($tipo_de_busqueda === 'all') {
+		$sql = 'SELECT * FROM articulos';
+		$statement = $conn->prepare($sql);
+		$statement->execute();
+		$posts = $statement->fetchAll();
+		$total_pages = count($posts);
 	}
 
 	if ($tipo_de_busqueda === 'busqueda') {
-		$sentencia = $conexion->prepare('SELECT * 
+		$sentencia = $conn->prepare('SELECT * 
 			FROM articulos 
 			WHERE titulo_articulo LIKE :busqueda
 			OR extracto_articulo LIKE :busqueda
@@ -80,10 +82,10 @@ function calcularPaginas($conexion, $post_por_pagina, $tipo_de_busqueda, $busque
 			
 		$sentencia->execute(array(":busqueda" => "%$busqueda%"));
 		$sentencia = $sentencia->fetchAll();
-		$total_paginas = count($sentencia);
+		$total_pages = count($sentencia);
 	}
 
-	$numero_paginas = ceil($total_paginas / $post_por_pagina);
+	$numero_paginas = ceil($total_pages / $num_posts);
 
 	return $numero_paginas;
 }
