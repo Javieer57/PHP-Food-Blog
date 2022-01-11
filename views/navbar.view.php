@@ -20,9 +20,15 @@
             <button class="header__icon reset-button">
                 <i class="fa-fw fas fa-search"></i>
             </button>
-            <a class="header__icon" href="javascript:;">
+            <?php if(!isset($_SESSION['usuario'])): ?>
+            <a class="header__icon" href="<?php echo BASE_URL; ?>login.php">
                 <i class="fa-fw fas fa-user"></i>
             </a>
+            <?php else: ?>
+            <a class="header__icon" href="<?php echo BASE_URL; ?>cerrar.php">
+                <i class="fa-fw fas fa-sign-out-alt"></i>
+            </a>
+            <?php endif ?>
         </div>
     </div>
 </header><!-- :::::: End Header :::::: -->
