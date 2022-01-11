@@ -8,6 +8,12 @@
 	padding-top: 36px;
 	padding-bottom: 36px;
 
+	&__logo {
+		&:hover {
+			color: var(--dark);
+		}
+	}
+
 	&__left {
 		justify-self: start;
 	}
