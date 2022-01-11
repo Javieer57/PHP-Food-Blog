@@ -20,14 +20,14 @@
 	}
 
 	&__readbtn {
-		@extend %transicion;
+		@extend %transition;
 		font-size: rem(14);
-		color: var(--light-gray);
+		color: var(--gray-2);
 		line-height: 26px;
 		position: relative;
 
 		&::after {
-			@extend %transicion;
+			@extend %transition;
 			content: "";
 			position: absolute;
 			left: 0;

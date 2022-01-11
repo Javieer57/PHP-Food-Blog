@@ -1,4 +1,4 @@
-@use '../util' as *;
+@use "../util" as *;
 
 h1,
 h2,
@@ -11,4 +11,9 @@ a,
 a:visited,
 a:active {
 	text-decoration: none;
+}
+
+.title_1 {
+	@extend %title;
+	font-size: rem(36);
 }

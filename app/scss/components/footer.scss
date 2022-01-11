@@ -10,7 +10,7 @@
 		margin: 45px auto;
 
 		li {
-			@extend %transicion;
+			@extend %transition;
 			display: inline-block;
 
 			&:hover {
@@ -29,6 +29,6 @@
 	}
 
 	&__text {
-		color: var(--light-gray);
+		color: var(--gray-2);
 	}
 }

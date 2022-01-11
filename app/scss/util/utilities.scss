@@ -5,8 +5,47 @@
 	margin: 15px auto 20px;
 }
 
-%transicion {
+%transition {
 	transition: all ease 0.3s;
+}
+
+%title {
+	font-family: var(--title-font);
+	font-weight: bold;
+	color: var(--dark);
+}
+
+.fa-fw {
+	text-align: center;
+	width: 1em;
+}
+
+.reset-button {
+	@extend %transition;
+	border: none;
+	padding: 2px;
+	margin: 0;
+	text-decoration: none;
+	background: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.grey-border-bottom {
+	border-bottom: 2px solid var(--gray-3);
+}
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+
+	@media (min-width: 65em) {
+		padding: 0;
+		max-width: 1000px;
+	}
 }
 
 .text_uppercase {

@@ -6,6 +6,7 @@ Buscar cómo subir proyecto php a github (BD y documentación) - buscar proyecto
 - ¿función para validar la conexión ?
 - mejorar la página de error
 CAmbiar el acomodo de las funciones para llamar a conexion
+- modificar meta tags de header
 
 /**---- Styles ----**/
 texto de card como estilo para otras partes?

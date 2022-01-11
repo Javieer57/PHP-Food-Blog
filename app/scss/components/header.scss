@@ -1,0 +1,59 @@
+@use "../util" as *;
+
+.header {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-items: center;
+	padding-top: 36px;
+	padding-bottom: 36px;
+
+	&__left {
+		justify-self: start;
+	}
+
+	&__right {
+		justify-self: end;
+	}
+
+	&__icons-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+
+	&__icon {
+		@extend %transition;
+		display: inline-block;
+		font-size: 1.25rem;
+		line-height: 0;
+		padding: 2px;
+
+		&:hover {
+			color: var(--gray-2);
+		}
+	}
+}
+
+.nav {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	&__links-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 32px;
+		margin: auto;
+	}
+
+	&__link {
+		@extend %transition;
+		font-family: var(--title-font);
+		font-weight: 500;
+		font-size: rem(14);
+
+		&:hover {
+			color: var(--gray-2);
+		}
+	}
+}
