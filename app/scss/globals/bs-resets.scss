@@ -40,3 +40,68 @@
 .card p {
 	margin-bottom: 0;
 }
+
+/* Pagination */
+.page-link {
+	@extend %transition;
+	color: var(--dark);
+	font-family: var(--title-font);
+	font-size: rem(16);
+	border: none;
+	border-right: 1px solid var(--gray-3);
+	font-weight: bold;
+	padding: 8px 24px;
+
+	&:hover {
+		z-index: 2;
+		color: var(--dark);
+		background-color: var(--gray-3);
+		border-color: var(--gray-3);
+	}
+
+	&:focus {
+		z-index: 3;
+		color: var(--white);
+		background-color: var(--dark);
+		border-color: var(--gray-3);
+		box-shadow: none;
+	}
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+	border: none;
+
+	&:hover {
+		z-index: 2;
+		color: var(--gray-2);
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	&:focus {
+		z-index: 3;
+		color: var(--gray-2);
+		background-color: transparent;
+		border-color: transparent;
+		box-shadow: none;
+	}
+}
+
+.page-item:not(:first-child) .page-link {
+	margin-left: 0;
+}
+
+.page-item.active .page-link {
+	z-index: 3;
+	color: var(--white);
+	background-color: var(--dark);
+	border-color: var(--gray-3);
+	box-shadow: none;
+}
+
+.page-item.disabled .page-link {
+	color: var(--gray-3);
+	pointer-events: none;
+	border-color: transparent;
+}
