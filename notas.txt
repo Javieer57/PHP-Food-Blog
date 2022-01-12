@@ -12,5 +12,10 @@ CAmbiar el acomodo de las funciones para llamar a conexion
 texto de card como estilo para otras partes?
 clases para tamaños de texto?
 
+cambiar en iconos con links 
+ <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+
 Poppins (500)
 https://fonts.google.com/specimen/Poppins

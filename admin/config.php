@@ -14,10 +14,10 @@ $bd_config = array(
 	'pass' => ''
 );
 
-$num_posts = 4;
+$num_posts = 2;
 
 $blog_config = array(
-	'post_por_pagina' => 4,
+	'post_por_pagina' => 2,
 	'images' => 'app/img/'
 );
 
