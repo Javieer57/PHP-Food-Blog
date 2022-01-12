@@ -43,11 +43,26 @@
     <div class="container">
         <div class="row row-cols-auto justify-content-center">
             <div class="col">
-                <nav class="nav gap-4">
-                    <a class="text_uppercase nav__link" href="javascript:;">HOME</a>
-                    <a class="text_uppercase nav__link" href="javascript:;">CATEGORIES <i class="fa-fw fas fa-chevron-down"></i></a>
-                    <a class="text_uppercase nav__link" href="javascript:;">CONTACT</a>
-                    <a class="text_uppercase nav__link" href="javascript:;">ABOUT US</a>
+                <nav class="nav py-0 gap-4 align-items-center">
+                    <a class="text_uppercase nav__link py-3" href="javascript:;">HOME</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle text_uppercase nav__link py-3" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href="javascript:;">CATEGORIES
+                            <i class="fa-fw fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <a class="dropdown-item" href="#">Food</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Bakery</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Dessert</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="text_uppercase nav__link py-3" href="javascript:;">CONTACT</a>
+                    <a class="text_uppercase nav__link py-3" href="javascript:;">ABOUT US</a>
                 </nav>
             </div>
         </div>

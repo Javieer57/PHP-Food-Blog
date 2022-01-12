@@ -1,0 +1,33 @@
+@use "../util" as *;
+.dropdown-toggle::after {
+	display: none;
+}
+.dropdown-menu {
+	border: 1px solid var(--gray-3);
+	border-radius: 0;
+	padding: 0;
+
+	li {
+		padding: 0 16px;
+
+		&:not(:last-child) .dropdown-item {
+			border-bottom: 1px solid var(--gray-3);
+		}
+	}
+}
+
+.dropdown-item {
+	@extend %transition;
+	padding: 16px 0;
+	color: var(--gray-2);
+
+	// &:nth-child(1) {
+	// 	background-color: turquoise;
+	// }
+
+	&:hover,
+	&:focus {
+		color: var(--dark);
+		background-color: transparent;
+	}
+}

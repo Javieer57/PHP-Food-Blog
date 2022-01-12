@@ -58,7 +58,8 @@
 		font-weight: 500;
 		font-size: rem(14);
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: var(--gray-2);
 		}
 	}
