@@ -8,27 +8,33 @@
     <!-- :::::: End Navbar :::::: -->
 
     <!-- :::::: Start Posts :::::: -->
-    <div class="grid">
-        <?php foreach($posts as $post): ?>
-        <div class="card text_center">
-            <div class="card__img">
-                <img src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
+    <main class="container py-5">
+        <div class="row row-cols-3 g-5">
+            <?php foreach($posts as $post): ?>
+            <div class="col">
+                <div class="card text-center h-100">
+                    <img class="card__img card-img-top" src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
+                    <div class="card-body pb-0">
+                        <span class="card-category text-uppercase mb-2 d-block ">Food</span>
+                        <a href="single_post.php?id=<?php echo $post['id']; ?>">
+                            <h3 class="card__title text-capitalize d-inline-block mb-0">
+                                <?php echo $post['title']; ?>
+                            </h3>
+                        </a>
+                        <div class="divider my-3 mx-auto"></div>
+                        <div class="card__text">
+                            <?php echo $post['info']; ?>
+                        </div>
+                    </div>
+                    <div class="card-footer py-3">
+                        <a href="single_post.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
+                    </div>
+                </div>
             </div>
-            <div class="card__contenido">
-                <a href="single_post.php?id=<?php echo $post['id']; ?>">
-                    <h3 class="card__title text_capitalize">
-                        <?php echo $post['title']; ?>
-                    </h3>
-                </a>
-                <div class="divider"></div>
-                <p class="card__text">
-                    <?php echo $post['info']; ?>
-                </p>
-                <a href="single_post.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
-            </div>
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
-    </div><!-- :::::: End Posts :::::: -->
+    </main>
+    <!-- :::::: End Posts :::::: -->
 
     <!-- :::::: Start Pagination :::::: -->
     <?php require_once(ROOT_PATH . '/views/paginacion.php'); ?>
