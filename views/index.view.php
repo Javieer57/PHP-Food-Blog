@@ -8,10 +8,10 @@
     <!-- :::::: End Navbar :::::: -->
 
     <!-- :::::: Start Posts :::::: -->
-    <main class="container py-5">
+    <main class="container my-5">
         <div class="row row-cols-3 g-5">
             <?php foreach($posts as $post): ?>
-            <div class="col">
+            <section class="col">
                 <div class="card text-center h-100">
                     <img class="card__img card-img-top" src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
                     <div class="card-body pb-0">
@@ -30,15 +30,11 @@
                         <a href="single_post.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
                     </div>
                 </div>
-            </div>
+            </section>
             <?php endforeach; ?>
         </div>
     </main>
     <!-- :::::: End Posts :::::: -->
 
-    <!-- :::::: Start Pagination :::::: -->
-    <?php require_once(ROOT_PATH . '/views/paginacion.php'); ?>
-    <!-- :::::: End Pagination :::::: -->
-
-    <!-- :::::: Start Footer :::::: -->
+    <?php require_once(ROOT_PATH . '/views/pagination.php'); ?>
     <?php require_once(ROOT_PATH . '/views/footer.php'); ?>

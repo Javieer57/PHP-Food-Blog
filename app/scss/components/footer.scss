@@ -20,8 +20,17 @@
 	}
 
 	&__link {
+		@extend %transition;
 		font-family: var(--title-font);
 		font-size: rem(14);
+
+		&:hover {
+			color: var(--gray-2);
+		}
+
+		.fab {
+			font-size: 20px;
+		}
 	}
 
 	.fab {

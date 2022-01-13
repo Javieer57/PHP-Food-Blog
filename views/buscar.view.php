@@ -30,6 +30,6 @@ require 'views/header.php';
 
 
 <?php
-require 'views/paginacion.php';
+require 'views/pagination.php';
 require 'views/footer.php';
 ?>

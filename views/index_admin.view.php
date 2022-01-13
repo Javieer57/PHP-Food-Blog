@@ -23,6 +23,6 @@ require 'header.php';
 <?php endforeach; ?>
 
 <?php
-require 'paginacion.php';
+require 'pagination.php';
 require 'footer.php';
 ?>
