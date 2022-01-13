@@ -38,13 +38,13 @@
 </header>
 <!-- :::::: End Header :::::: -->
 
-<!-- :::::: Start Navegation :::::: -->
+<!-- :::::: Start Navbar :::::: -->
 <div class="container-fluid grey-border-bottom">
     <div class="container">
         <div class="row row-cols-auto justify-content-center">
             <div class="col">
                 <nav class="nav py-0 gap-4 align-items-center">
-                    <a class="text_uppercase nav__link py-3" href="javascript:;">HOME</a>
+                    <a class="text_uppercase nav__link py-3" href="<?php echo BASE_URL; ?>">HOME</a>
                     <div class="dropdown">
                         <a class="dropdown-toggle text_uppercase nav__link py-3" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href="javascript:;">CATEGORIES
                             <i class="fa-fw fas fa-chevron-down"></i>
@@ -68,4 +68,4 @@
         </div>
     </div>
 </div>
-<!-- :::::: End Navegation :::::: -->
+<!-- :::::: End Navbar :::::: -->
