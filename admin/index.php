@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'config.php'; 
 require '../funciones.php'; 
 
@@ -16,7 +15,7 @@ if (!$conexion) {
 };
 
 /* Calculamos todas las páginas que necesita la paginación */
-$total_paginas = calcPages($conexion, $blog_config['post_por_pagina'], 'todos');
+$total_pages = calcPages('all');
 
 require '../views/index_admin.view.php'; 
 ?>

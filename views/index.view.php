@@ -3,9 +3,7 @@
 </head>
 
 <body>
-    <!-- :::::: Start Navbar :::::: -->
     <?php require_once(ROOT_PATH . '/views/navbar.view.php');?>
-    <!-- :::::: End Navbar :::::: -->
 
     <!-- :::::: Start Posts :::::: -->
     <main class="container my-5">
@@ -16,7 +14,7 @@
                     <img class="card__img card-img-top" src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
                     <div class="card-body pb-0">
                         <span class="card-category text-uppercase mb-2 d-block ">Food</span>
-                        <a href="single_post.php?id=<?php echo $post['id']; ?>">
+                        <a href="single.php?id=<?php echo $post['id']; ?>">
                             <h3 class="card__title text-capitalize d-inline-block mb-0">
                                 <?php echo $post['title']; ?>
                             </h3>
@@ -27,7 +25,7 @@
                         </div>
                     </div>
                     <div class="card-footer py-3">
-                        <a href="single_post.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
+                        <a href="single.php?id=<?php echo $post['id']; ?>" class="card__readbtn text_uppercase">read more</a>
                     </div>
                 </div>
             </section>

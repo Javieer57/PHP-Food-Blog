@@ -1,28 +1,40 @@
-<?php
-require 'header.php';
-?>
-<h1>Admin</h1>
-<a href="nuevo_post.php">Nuevo post</a>
-<a href="<?php echo BASE_URL; ?>cerrar.php">Cerrar sesión</a>
+<?php require '../views/header.php';?>
+<title>Admin | Cook Blog</title>
+</head>
 
-<br><br><br>
+<body>
+    <?php require '../views/navbar.view.php';?>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="card__title">Admin</h2>
+                <a href="nuevo_post.php">Nuevo post</a>
+
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <!-- :::::: Start Posts :::::: -->
+                <?php foreach($articulos as $articulo): ?>
+                <div class="mb-4">
+                    <h3 class="h4 font-title">
+                        <?php echo $articulo['title']; ?>
+                    </h3>
+
+                    <a href="editar.php?id=<?php echo $articulo['id']; ?>">Editar</a>
+                    <a href="../single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
+                    <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
+                </div>
+                <?php endforeach; ?>
+                <!-- :::::: End Posts :::::: -->
+
+            </div>
+        </div>
+    </main>
 
 
-<!-- :::::: Inicio de sección de artículos :::::: -->
-<?php foreach($articulos as $articulo): ?>
-<div class="">
-    <h2>
-		<?php echo $articulo['title']; ?>        
-    </h2>
 
-	
-    <a href="editar.php?id=<?php echo $articulo['id']; ?>">Editar</a>
-    <a href="../single_post.php?id=<?php echo $articulo['id']; ?>">Ver</a>
-    <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
-</div>
-<?php endforeach; ?>
 
-<?php
-require 'pagination.php';
-require 'footer.php';
-?>
+    <?php require '../views/pagination.php'; ?>
+    <?php require '../views/footer.php'; ?>

@@ -8,7 +8,7 @@ require 'views/header.php';
 <?php foreach($resultado_busqueda as $resultado): ?>
 <div class="">
     <h2>
-        <a href="single_post.php?id=<?php echo $resultado['id']; ?>">
+        <a href="single.php?id=<?php echo $resultado['id']; ?>">
             <?php echo $resultado['title']; ?>
         </a>
     </h2>
@@ -23,7 +23,7 @@ require 'views/header.php';
         <?php echo $resultado['info']; ?>
     </p>
 
-    <a href="single_post.php?id=<?php echo $resultado['id']; ?>">leer más</a>
+    <a href="single.php?id=<?php echo $resultado['id']; ?>">leer más</a>
 </div>
 <?php endforeach; ?>
 

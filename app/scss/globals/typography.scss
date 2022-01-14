@@ -17,3 +17,7 @@ a:active {
 	@extend %title;
 	font-size: rem(36);
 }
+
+.font-title {
+	font-family: var(--title-font);
+}
