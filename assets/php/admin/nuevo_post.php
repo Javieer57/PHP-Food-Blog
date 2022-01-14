@@ -1,11 +1,9 @@
 <?php
 session_start();
 require 'config.php'; 
-require '../funciones.php'; 
+require '../functions.php'; 
 
-comprobarSesion();
-
-$conexion = conectarBD($bd_config);
+validateLogin();
 
 if (!$conexion) {
 	header('Location: ../error.php');
@@ -36,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
 		move_uploaded_file($thumb, $contenedor_archivo);
 
 		$sentencia = $conexion->prepare(
-			'INSERT INTO articulos (titulo_articulo, extracto_articulo, contenido_articulo, thumb_articulo)
+			'INSERT INTO articulos (title, info, content, thumb_articulo)
 			VALUES (:titulo, :extracto, :contenido, :thumb)'
 		);
 		$sentencia->execute(array(

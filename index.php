@@ -1,10 +1,10 @@
 <!-- the first include should be config.php -->
 <?php require 'assets/php/admin/config.php'; ?>
-<?php require 'funciones.php'; ?>
+<?php require 'functions.php'; ?>
 
 <?php
 // get all posts from database
-$posts = getPosts();
+$posts = getAllPosts();
 
 // go to error.php if there is no conection to DB or posts to show
 if (!$conn || !$posts) {

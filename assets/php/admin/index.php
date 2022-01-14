@@ -1,12 +1,11 @@
 <?php
 require 'config.php'; 
-require  '../../../funciones.php'; 
+require  '../../../functions.php'; 
 
-comprobarSesion();
+validateLogin();
 
 /* Conectamos a BD y traemos los post */
-$conexion = conectarBD($bd_config);
-$articulos = getAllPost($blog_config['post_por_pagina'], $conexion);
+$articulos = getAllPosts();
 
 /* Si no hay conexión o no hay artículos */
 if (!$conexion) {

@@ -11,7 +11,7 @@
             <?php foreach($posts as $post): ?>
             <section class="col">
                 <div class="card text-center h-100">
-                    <img class="card__img card-img-top" src="<?php echo BASE_URL . $blog_config['images'] . $post['image']; ?>" alt="">
+                    <img class="card__img card-img-top" src="<?php echo IMG_URL . $post['image']; ?>" alt="">
                     <div class="card-body pb-0">
                         <span class="card-category text-uppercase mb-2 d-block ">Food</span>
                         <a href="single.php?id=<?php echo $post['id']; ?>">

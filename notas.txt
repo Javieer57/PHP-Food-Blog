@@ -5,7 +5,7 @@ Buscar cómo subir proyecto php a github (BD y documentación) - buscar proyecto
 - optimizar la forma en la que se calculan las páginas
 - ¿función para validar la conexión ?
 - mejorar la página de error
-CAmbiar el acomodo de las funciones para llamar a conexion
+CAmbiar el acomodo de las functions para llamar a conexion
 - modificar meta tags de header
 
 /**---- Styles ----**/
@@ -16,6 +16,8 @@ cambiar en iconos con links
  <a class="page-link" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
+
+Configurar paginación para que una sola funcione para index y search
 
 Poppins (500)
 https://fonts.google.com/specimen/Poppins

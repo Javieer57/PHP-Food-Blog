@@ -1,7 +1,6 @@
 <!-- the first include should be config.php -->
 <?php require 'assets/php/admin/config.php'; ?>
-<?php require 'funciones.php'; ?>
-<?php $conexion = conectarBD($bd_config); ?>
+<?php require 'functions.php'; ?>
 
 <?php
 // return to index if there is no conection to DB

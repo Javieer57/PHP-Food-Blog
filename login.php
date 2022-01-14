@@ -1,10 +1,10 @@
 <!-- the first include should be config.php -->
 <?php require 'assets/php/admin/config.php'; ?>
-<?php require 'funciones.php'; ?>
+<?php require 'functions.php'; ?>
 
 <?php
 /* Evitamos que se ingrese al formulario si ya está logeado */
-if (isset($_SESSION['usuario'])) {
+if (isset($_SESSION['user'])) {
 	header('Location: assets/php/admin/index.php');
 }
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	if ($nombre == $blog_admin['usuario'] && $pass == $blog_admin['password']) {
-		$_SESSION['usuario'] = $nombre;
+		$_SESSION['user'] = $nombre;
 		header('Location: assets/php/admin/index.php');
 	}
 }

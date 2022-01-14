@@ -1,28 +1,41 @@
 <?php
 session_start();
 
-// connect to database
-$conn = new PDO("mysql:host=localhost;dbname=practica_blog",'root','');
-
-// define ('BASE_URL', realpath(dirname(__FILE__)));
 define('BASE_URL', 'http://localhost/blog/');
+define('IMG_URL', 'http://localhost/blog/assets/img/');
 
 $bd_config = array(
 	'host' => 'localhost',
-	'BD' => 'practica_blog',
+	'DB' => 'php_blog',
 	'user' => 'root',
 	'pass' => ''
 );
 
-$num_posts = 3;
-
-$blog_config = array(
-	'post_por_pagina' => 3,
-	'images' => 'assets/img/'
-);
-
 $blog_admin = array(
-	'usuario' => 'Javier',
+	'user' => 'Javier',
 	'password' => '123'
 );
+
+// number of post to show in index and index of admin
+$num_posts = 3;
+
+// connect to database
+try {
+	$conn = new PDO(
+		"mysql:host={$bd_config['host']};
+		dbname={$bd_config['DB']}", 
+		$bd_config['user'], 
+		$bd_config['pass']
+	);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	return $conn;
+} catch (PDOException $e) {
+	return false;
+}
+
+// if connection to the database failed, go to error.php
+if ($conn === false) {
+	header('Location: ' . BASE_URL . 'error.php');
+}
 ?>

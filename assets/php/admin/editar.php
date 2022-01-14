@@ -1,12 +1,9 @@
 <?php
 session_start();
 require 'config.php'; 
-require '../funciones.php'; 
+require '../functions.php'; 
 
-comprobarSesion();
-
-$conexion = conectarBD($bd_config);
-
+validateLogin();
 
 if (!$conexion) {
 	header('Location: ../error.php');
@@ -38,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$sentencia = $conexion->prepare(
 		"UPDATE articulos 
-		SET titulo_articulo = :titulo , extracto_articulo = :extracto, contenido_articulo = :contenido, thumb_articulo = :thumb
+		SET title = :titulo , info = :extracto, content = :contenido, thumb_articulo = :thumb
 		WHERE id = :id"
 	);
 

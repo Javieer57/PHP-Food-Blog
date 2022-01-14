@@ -23,7 +23,7 @@
                 <button class="header__icon reset-button">
                     <i class="fa-fw fas fa-search"></i>
                 </button>
-                <?php if(!isset($_SESSION['usuario'])): ?>
+                <?php if(!isset($_SESSION['user'])): ?>
                 <a class="header__icon" href="<?php echo BASE_URL; ?>login.php">
                     <i class="fa-fw fas fa-user"></i>
                 </a>
@@ -39,7 +39,7 @@
 <!-- :::::: End Header :::::: -->
 
 <!-- :::::: Start Navbar :::::: -->
-<div class="container-fluid grey-border-bottom">
+<div class="container-fluid grey-border-bottom mb-5">
     <div class="container">
         <div class="row row-cols-auto justify-content-center">
             <div class="col">
