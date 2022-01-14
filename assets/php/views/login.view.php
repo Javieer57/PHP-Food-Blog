@@ -1,9 +1,9 @@
-<?php require_once(ROOT_PATH . '/views/header.php');?>
+<?php require 'assets/php/views/header.php';?>
 <title>Log In | Cook Blog</title>
 </head>
 
 <body>
-    <?php require_once(ROOT_PATH . '/views/navbar.view.php');?>
+    <?php require 'assets/php/views/navbar.view.php';?>
 
     <section class="container my-5">
         <div class="row">
@@ -50,5 +50,4 @@
         </div>
     </section>
 
-
-    <?php require_once(ROOT_PATH . '/views/footer.php'); ?>
+    <?php require 'assets/php/views/footer.php'; ?>

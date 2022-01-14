@@ -4,7 +4,7 @@ session_start();
 // connect to database
 $conn = new PDO("mysql:host=localhost;dbname=practica_blog",'root','');
 
-// define ('ROOT_PATH', realpath(dirname(__FILE__)));
+// define ('BASE_URL', realpath(dirname(__FILE__)));
 define('BASE_URL', 'http://localhost/blog/');
 
 $bd_config = array(
@@ -18,7 +18,7 @@ $num_posts = 3;
 
 $blog_config = array(
 	'post_por_pagina' => 3,
-	'images' => 'app/img/'
+	'images' => 'assets/img/'
 );
 
 $blog_admin = array(

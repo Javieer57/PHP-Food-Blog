@@ -2,7 +2,7 @@
 
 /* Búsqueda con paginación */
 
-require 'admin/config.php'; 
+require 'assets/php/admin/config.php'; 
 require 'funciones.php'; 
 
 /* Si no hay busqueda */
@@ -20,6 +20,6 @@ $resultado_busqueda = obtenerPostPorBusqueda($conexion, $busqueda, $blog_config[
 /* Calculamos páginas para paginación */
 $total_paginas = calcPages($conexion, $blog_config['post_por_pagina'], 'busqueda', $busqueda);
 
-require 'views/buscar.view.php';
+require 'assets/php/views/buscar.view.php';
 
 ?>

@@ -1,10 +1,10 @@
 <?php
-require 'admin/config.php';
-require 'views/header.php';
+require 'assets/php/admin/config.php';
+require 'assets/php/views/header.php';
 ?>
 
 <h1>Error de conexión</h1>
 
 <?php
-require 'views/footer.php';
+require 'assets/php/views/footer.php';
 ?>

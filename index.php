@@ -1,7 +1,6 @@
 <!-- the first include should be config.php -->
-<?php require_once('admin/config.php'); ?>
-<?php define ('ROOT_PATH', realpath(dirname(__FILE__))); ?>
-<?php require_once(ROOT_PATH . '/funciones.php'); ?>
+<?php require 'assets/php/admin/config.php'; ?>
+<?php require 'funciones.php'; ?>
 
 <?php
 // get all posts from database
@@ -16,4 +15,4 @@ if (!$conn || !$posts) {
 $total_pages = calcPages('all');
 ?>
 
-<?php require_once(ROOT_PATH . '/views/index.view.php'); ?>
+<?php require 'assets/php/views/index.view.php'; ?>

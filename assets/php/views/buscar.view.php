@@ -29,7 +29,5 @@ require 'views/header.php';
 
 
 
-<?php
-require 'views/pagination.php';
-require 'views/footer.php';
-?>
+<?php require 'assets/php/views/pagination.php'; ?>
+<?php require 'assets/php/views/footer.php'; ?>
