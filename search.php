@@ -3,13 +3,12 @@
 <?php require 'functions.php'; ?>
 
 <?php
-
 // return to index if there is no search
 if (!$_GET['search']) {
 	header('Location: index.php');
 }
 
-/* Validamos la búsqueda y buscamos resultados */
+// get posts based in sanitezed data
 $search = sanitizeData($_GET['search']);
 $search_results = getPostsBySearch($search);
 
