@@ -3,11 +3,11 @@
 <?php require 'functions.php'; ?>
 
 <?php
-// get all posts from database
+// get all posts from the database
 $posts = getAllPosts();
 
-// go to error.php if there is no conection to DB or posts to show
-if (!$conn || !$posts) {
+// if there is no posts, go to error.php
+if (!$posts) {
 	header('location: error.php');	
 };
 

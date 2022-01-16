@@ -2,37 +2,43 @@
 <footer class="footer mt-5">
     <div class="owl-carousel">
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/alexander-andrews-cU2lda3kbls-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/dragne-marius-EdzsUFqHbaY-unsplash.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/ben-griffiths-wecpA8RQ_zc-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/sylwia-forysinska-jJ8EYTq26Ak-unsplash.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/ben-kolde-cpLsWmMEa1Q-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/louis-hansel-Si5lP0g-sR8-unsplash.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/dexman-ten-hwe-eM5z-GX10p8-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/8.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/michael-schiffer-9CSGSq_7UrA-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/raka-diraka-_jxyzXck9uY-unsplash.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/nasa-jlV2k_Fx0fc-unsplash.jpg" alt="" />
+            <img src="<?php echo BASE_URL; ?>assets/img/12.jpg" alt="" />
+            <div class="gallery__fade">
+                <i class="gallery__icon" data-feather="instagram"></i>
+            </div>
+        </a>
+        <a href="#" class="gallery__photo">
+            <img src="<?php echo BASE_URL; ?>assets/img/9.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>

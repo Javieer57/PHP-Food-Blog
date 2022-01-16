@@ -28,7 +28,7 @@
                     <i class="fa-fw fas fa-user"></i>
                 </a>
                 <?php else: ?>
-                <a class="header__icon" href="<?php echo BASE_URL; ?>cerrar.php">
+                <a class="header__icon" href="<?php echo BASE_URL; ?>logout.php">
                     <i class="fa-fw fas fa-sign-out-alt"></i>
                 </a>
                 <?php endif ?>

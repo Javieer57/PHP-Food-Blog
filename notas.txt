@@ -17,7 +17,6 @@ cambiar en iconos con links
         <span aria-hidden="true">&laquo;</span>
       </a>
 
-Configurar paginación para que una sola funcione para index y search
 
 Poppins (500)
 https://fonts.google.com/specimen/Poppins

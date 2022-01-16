@@ -1,4 +1,5 @@
 <?php require 'assets/php/views/header.php'; ?>
+
 <title>Home | Cook Blog</title>
 </head>
 
