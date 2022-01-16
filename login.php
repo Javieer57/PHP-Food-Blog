@@ -5,7 +5,7 @@
 <?php
 /* Evitamos que se ingrese al formulario si ya está logeado */
 if (isset($_SESSION['user'])) {
-	header('Location: ./assets/php/index_admin.php');
+	header('Location: ./admin.php');
 }
 
 /* Validamos los datos que se hayan enviado por el formulario */
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if ($user == $blog_admin['user'] && $pass == $blog_admin['password']) {
 		$_SESSION['user'] = $user;
-		header('Location: ./assets/php/admin/index.php');
+		header('Location: ./assets/php/admin.php');
 	}
 }
 ?>
