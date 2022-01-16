@@ -1,5 +1,5 @@
 <!-- the first include should be config.php -->
-<?php require 'assets/php/admin/config.php'; ?>
+<?php require './assets/php/admin/config.php'; ?>
 <?php require 'functions.php'; ?>
 
 <?php
@@ -16,4 +16,4 @@ $search_results = getPostsBySearch($search);
 $total_pages = calcPages('search', $search);
 ?>
 
-<?php require 'assets/php/views/search.view.php'; ?>
+<?php require './assets/php/views/search.view.php'; ?>

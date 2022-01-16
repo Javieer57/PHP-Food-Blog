@@ -1,13 +1,13 @@
-<?php require 'assets/php/views/header.php'; ?>
+<?php require './assets/php/views/header.php'; ?>
 
-<?php require 'assets/php/views/header.php'; ?>
+<?php require './assets/php/views/header.php'; ?>
 
 <title>Error | Cook Blog</title>
 </head>
 
 <body>
 
-    <?php require 'assets/php/views/navbar.view.php'; ?>
+    <?php require './assets/php/views/navbar.view.php'; ?>
 
     <div class="container">
         <div class="row align-items-center">
@@ -21,9 +21,9 @@
                 <a class="btn btn-dark" href="./index.php">Go back Home</a>
             </div>
             <div class="col">
-                <img src="./assets/img/error.png" alt="">
+                <img src="././assets/img/error.png" alt="">
             </div>
         </div>
     </div>
 
-    <?php require 'assets/php/views/footer.php'; ?>
+    <?php require './assets/php/views/footer.php'; ?>

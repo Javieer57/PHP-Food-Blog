@@ -1,5 +1,5 @@
 <!-- the first include should be config.php -->
-<?php require 'assets/php/admin/config.php'; ?>
+<?php require './assets/php/admin/config.php'; ?>
 <?php require 'functions.php'; ?>
 
 <?php
@@ -18,4 +18,4 @@ if (!isset($post_id) || $post == false ) {
 }
 ?>
 
-<?php require 'assets/php/views/single.view.php'; ?>
+<?php require './assets/php/views/single.view.php'; ?>

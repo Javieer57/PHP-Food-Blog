@@ -1,9 +1,9 @@
-<?php require 'assets/php/views/header.php'; ?>
+<?php require './assets/php/views/header.php'; ?>
 <title>Search | Cook Blog</title>
 </head>
 
 <body>
-    <?php require 'assets/php/views/navbar.view.php'; ?>
+    <?php require './assets/php/views/navbar.view.php'; ?>
 
     <!-- :::::: Start Search Results :::::: -->
     <main class="container mb-5">
@@ -38,5 +38,5 @@
 
     <!-- :::::: End Search Results :::::: -->
 
-    <?php require 'assets/php/views/pagination.php'; ?>
-    <?php require 'assets/php/views/footer.php'; ?>
+    <?php require './assets/php/views/pagination.php'; ?>
+    <?php require './assets/php/views/footer.php'; ?>

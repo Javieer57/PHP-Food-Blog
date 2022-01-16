@@ -1,9 +1,9 @@
-<?php require 'assets/php/views/header.php';?>
+<?php require './assets/php/views/header.php';?>
 <title>Log In | Cook Blog</title>
 </head>
 
 <body>
-    <?php require 'assets/php/views/navbar.view.php';?>
+    <?php require './assets/php/views/navbar.view.php';?>
 
     <section class="container my-5">
         <div class="row">
@@ -15,7 +15,7 @@
                         </div>
 
                         <div class="col">
-                            <input class="form-control" type="text" name="usuario" id="user" value="<?php echo isset($_POST['usuario']) ? $_POST['usuario'] : '' ?>" required>
+                            <input class="form-control" type="text" name="user" id="user" value="<?php echo isset($_POST['user']) ? $_POST['user'] : '' ?>" required>
                             <div class="valid-feedback">
                                 Valid user.
                             </div>
@@ -50,4 +50,4 @@
         </div>
     </section>
 
-    <?php require 'assets/php/views/footer.php'; ?>
+    <?php require './assets/php/views/footer.php'; ?>

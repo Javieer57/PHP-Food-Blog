@@ -2,7 +2,7 @@
 session_start();
 
 define('BASE_URL', 'http://localhost/blog/');
-define('IMG_URL', 'http://localhost/blog/assets/img/');
+define('IMG_DIRECTION', 'http://localhost/blog/assets/img/');
 
 $bd_config = array(
 	'host' => 'localhost',

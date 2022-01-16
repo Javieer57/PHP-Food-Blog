@@ -46,11 +46,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Main Style -->
-    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>assets/css/plugin/owl.carousel.min.css' />
-    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>assets/css/styles.min.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>./assets/css/plugin/owl.carousel.min.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>./assets/css/styles.min.css' />
+
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/bguxgewbckohq4tizpp0go6q2vkkqgnjrxzftqlfs8xfbj44/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+    tinymce.init({
+        selector: '#content'
+    });
+    </script>
 
     <!-- JS -->
-    <script defer src="<?php echo BASE_URL; ?>assets/js/vendor/jquery.min.js"></script>
-    <script defer src="<?php echo BASE_URL; ?>assets/js/plugin/owl.carousel.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>./assets/js/vendor/jquery.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>./assets/js/plugin/owl.carousel.min.js"></script>
 
-    <script defer src='<?php echo BASE_URL; ?>assets/js/script.min.js'></script>
+    <script defer src='<?php echo BASE_URL; ?>./assets/js/script.min.js'></script>

@@ -1,10 +1,10 @@
-<?php require 'assets/php/views/header.php'; ?>
+<?php require './assets/php/views/header.php'; ?>
 
 <title>Home | Cook Blog</title>
 </head>
 
 <body>
-    <?php require 'assets/php/views/navbar.view.php'; ?>
+    <?php require './assets/php/views/navbar.view.php'; ?>
 
     <!-- :::::: Start Posts :::::: -->
     <main class="container my-5">
@@ -12,7 +12,7 @@
             <?php foreach($posts as $post): ?>
             <section class="col">
                 <div class="card text-center h-100">
-                    <img class="card__img card-img-top" src="<?php echo IMG_URL . $post['image']; ?>" alt="">
+                    <img class="card__img card-img-top" src="<?php echo IMG_DIRECTION . $post['image']; ?>" alt="">
                     <div class="card-body pb-0">
                         <span class="card-category text-uppercase mb-2 d-block ">Food</span>
                         <a href="single.php?id=<?php echo $post['id']; ?>">
@@ -35,5 +35,5 @@
     </main>
     <!-- :::::: End Posts :::::: -->
 
-    <?php require 'assets/php/views/pagination.php'; ?>
-    <?php require 'assets/php/views/footer.php'; ?>
+    <?php require './assets/php/views/pagination.php'; ?>
+    <?php require './assets/php/views/footer.php'; ?>

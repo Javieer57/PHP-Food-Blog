@@ -1,9 +1,9 @@
-<?php require '../views/header.php';?>
+<?php require './assets/php/views/header.php';?>
 <title>Admin | Cook Blog</title>
 </head>
 
 <body>
-    <?php require '../views/navbar.view.php';?>
+    <?php require './assets/php/views/navbar.view.php';?>
 
     <main class="container my-5">
         <div class="row">
@@ -22,8 +22,8 @@
                         <?php echo $articulo['title']; ?>
                     </h3>
 
-                    <a href="editar.php?id=<?php echo $articulo['id']; ?>">Editar</a>
-                    <a href="../single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
+                    <a href="edit_post.php?id=<?php echo $articulo['id']; ?>">Editar</a>
+                    <a href="single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
                     <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
                 </div>
                 <?php endforeach; ?>
@@ -33,8 +33,5 @@
         </div>
     </main>
 
-
-
-
-    <?php require '../views/pagination.php'; ?>
-    <?php require '../views/footer.php'; ?>
+    <?php require './assets/php/views/pagination.php'; ?>
+    <?php require './assets/php/views/footer.php'; ?>

@@ -1,17 +1,17 @@
-<?php require 'assets/php/views/header.php';?>
+<?php require './assets/php/views/header.php';?>
 
 <title><?php echo $post['title']; ?> | Cook Blog</title>
 </head>
 
 <body>
-    <?php require 'assets/php/views/navbar.view.php';?>
+    <?php require './assets/php/views/navbar.view.php';?>
 
     <!-- :::::: Start Post :::::: -->
     <main class="container my-4">
         <div class="row">
             <div class="col">
                 <div class="ratio ratio-21x9 mb-3">
-                    <img src="<?php echo IMG_URL . $post['image']; ?>" alt="">
+                    <img src="<?php echo IMG_DIRECTION . $post['image']; ?>" alt="">
                 </div>
 
                 <h1 class="card__title"><?php echo $post['title']; ?></h1>
@@ -26,4 +26,4 @@
     </main>
     <!-- :::::: End Post :::::: -->
 
-    <?php require 'assets/php/views/footer.php';?>
+    <?php require './assets/php/views/footer.php';?>

@@ -1,5 +1,5 @@
 <!-- the first include should be config.php -->
-<?php require 'assets/php/admin/config.php'; ?>
+<?php require './assets/php/admin/config.php'; ?>
 <?php require 'functions.php'; ?>
 
 <?php
@@ -15,4 +15,4 @@ if (!$posts) {
 $total_pages = calcPages('all');
 ?>
 
-<?php require 'assets/php/views/index.view.php'; ?>
+<?php require './assets/php/views/index.view.php'; ?>

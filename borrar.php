@@ -1,6 +1,6 @@
 <?php
-session_start();
-require 'config.php'; 
+
+require './assets/php/admin/config.php'; 
 require '../functions.php'; 
 
 validateLogin();

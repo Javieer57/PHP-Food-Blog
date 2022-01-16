@@ -1,6 +1,6 @@
 <?php
-session_start();
-require 'config.php'; 
+
+require './assets/php/admin/config.php'; 
 require '../functions.php'; 
 
 validateLogin();
@@ -9,17 +9,18 @@ if (!$conexion) {
 	header('Location: ../error.php');
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$id = sanitizeData($_POST['id']);
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
 	$titulo = sanitizeData($_POST['titulo']);
 	$extracto = sanitizeData($_POST['extracto']);
 	$contenido = sanitizeData($_POST['contenido']);
-	$thumb = sanitizeData($_FILES['thumb']['name']);
-	$thumb_guardada = sanitizeData($_POST['thumb-guardada']);
+	$thumb = sanitizeData($_FILES['thumb']['tmp_name']);
 
-	if (empty($thumb)) {
-			$thumb = $thumb_guardada;
-	} else{
+	$errores = '';
+
+
+	if (empty($titulo) || empty($extracto) || empty($contenido) || empty($_FILES)) {
+		$errores = 'Por favor, captura todos los campos';
+	} else {
 		/* Valida el tamaño del archivo que se subió (por el momento está como temporal) */
 		$check = @getimagesize($_FILES['thumb']['tmp_name']);
 
@@ -31,29 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		/* Mueve el archivo temporal, al contenedor (y dejará de ser temporal)*/
 		move_uploaded_file($thumb, $contenedor_archivo);
-	}
 
-	$sentencia = $conexion->prepare(
-		"UPDATE articulos 
-		SET title = :titulo , info = :extracto, content = :contenido, thumb_articulo = :thumb
-		WHERE id = :id"
-	);
+		$sentencia = $conexion->prepare(
+			'INSERT INTO articulos (title, info, content, image)
+			VALUES (:titulo, :extracto, :contenido, :thumb)'
+		);
+		$sentencia->execute(array(
+			":titulo" => $titulo, 
+			":extracto" => $extracto,
+			":contenido" => $contenido,
+			":thumb" => $_FILES['thumb']['name']
+		));
 
-	$sentencia->execute(array(
-		":titulo" => $titulo, 
-		":extracto" => $extracto,
-		":contenido" => $contenido,
-		":thumb" => $thumb,
-		":id" => $id,
-	));
-
-	header('Location: index.php');
-} else {
-	$post = getPost($conexion, $_GET['id']);
-	if (!$post) {
-		header('Location: error.php');
+		header('Location: index.php');
 	}
 }
 
-require '../views/editar.view.php';
+require '../views/nuevo_post.view.php'
 ?>
