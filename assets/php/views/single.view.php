@@ -19,7 +19,7 @@
                 <small class="text-muted"><?php echo formatDate($post['date']); ?></small>
 
                 <div class="post__body mt-3">
-                    <p><?php echo html_entity_decode($post['content'], ENT_HTML5, "UTF-8"); ?></p>
+                    <?php echo html_entity_decode($post['content'], ENT_HTML5, "UTF-8"); ?>
                 </div>
             </div>
         </div>

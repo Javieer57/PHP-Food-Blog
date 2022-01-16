@@ -17,6 +17,8 @@ cambiar en iconos con links
         <span aria-hidden="true">&laquo;</span>
       </a>
 
+Mejorar editor de texto para links
+
 
 Poppins (500)
 https://fonts.google.com/specimen/Poppins
