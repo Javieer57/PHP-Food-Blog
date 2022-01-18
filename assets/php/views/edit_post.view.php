@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <input class="btn bt-dark text-light" type="submit" value="Guardar">
+                    <input class="btn bt-dark text-light" type="submit" value="Save post">
                 </form>
 
                 <?php if(!empty($errores)): ?>

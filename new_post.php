@@ -1,52 +1,43 @@
-<?php
+<!-- the first include should be config.php -->
+<?php require './assets/php/admin/config.php'; ?>
+<?php require 'functions.php'; ?>
 
-require './assets/php/admin/config.php'; 
-require '../functions.php'; 
+<?php
 
 validateLogin();
 
-if (!$conexion) {
-	header('Location: ../error.php');
-}
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
-	$titulo = sanitizeData($_POST['titulo']);
-	$extracto = sanitizeData($_POST['extracto']);
-	$contenido = sanitizeData($_POST['contenido']);
+	$title = sanitizeData($_POST['title']);
+	$info = sanitizeData($_POST['info']);
+	$content = sanitizeData($_POST['content']);
 	$thumb = sanitizeData($_FILES['thumb']['tmp_name']);
 
-	$errores = '';
-
-
-	if (empty($titulo) || empty($extracto) || empty($contenido) || empty($_FILES)) {
-		$errores = 'Por favor, captura todos los campos';
+	// $errores = '';
+	
+	if (empty($title) || empty($info) || empty($content) || empty($_FILES)) {
+		// $errores = 'Por favor, captura todos los campos';
+		print_r('erorr');
 	} else {
-		/* Valida el tamaño del archivo que se subió (por el momento está como temporal) */
-		$check = @getimagesize($_FILES['thumb']['tmp_name']);
+		// Defines the name of the container that will receive the temporary file
+		$temp_file = IMG_DIRECTION . $_FILES['thumb']['name'];
 
-		/* Especifica en qué carpeta se guardará el archivo */
-		$carpeta_destino = $blog_config['images'];
+		// Move the temporary file to the container (and it will no longer be temporary)
+		move_uploaded_file($thumb, $temp_file);
 
-		/* Define el nombre del contenedor que recibirá al archivo temporal */
-		$contenedor_archivo = $carpeta_destino . $_FILES['thumb']['name'];
-
-		/* Mueve el archivo temporal, al contenedor (y dejará de ser temporal)*/
-		move_uploaded_file($thumb, $contenedor_archivo);
-
-		$sentencia = $conexion->prepare(
-			'INSERT INTO articulos (title, info, content, image)
-			VALUES (:titulo, :extracto, :contenido, :thumb)'
-		);
-		$sentencia->execute(array(
-			":titulo" => $titulo, 
-			":extracto" => $extracto,
-			":contenido" => $contenido,
+		$sql = 'INSERT INTO articles 
+			(title, info, content, image)
+			VALUES (:title, :info, :content, :thumb)';
+		$statement = $conn->prepare($sql);
+		$statement->execute(array(
+			":title" => $title, 
+			":info" => $info,
+			":content" => $content,
 			":thumb" => $_FILES['thumb']['name']
 		));
 
-		header('Location: index.php');
+		header('Location: admin.php');
 	}
 }
-
-require '../views/nuevo_post.view.php'
 ?>
+
+<?php require './assets/php/views/new_post.view.php'; ?>
