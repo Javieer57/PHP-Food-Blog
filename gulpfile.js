@@ -15,7 +15,7 @@ function scssTask() {
   return src("assets/scss/styles.scss", { sourcemaps: true })
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(postcss(plugins))
-    .pipe(dest("assets/css/", { sourcemaps: '.' }));
+    .pipe(dest("assets/css", { sourcemaps: '.' }));
 }
 
 // Minify img Task
@@ -27,9 +27,9 @@ function imagesTask() {
 
 // JS Task
 function jsTask() {
-  return src("assets/js/script.js", { sourcemaps: true })
+  return src("assets/js/main.js", { sourcemaps: true })
     .pipe(terser())
-    .pipe(dest("assets/js/", { sourcemaps: '.' }));
+    .pipe(dest("assets/js", { sourcemaps: '.' }));
 }
 
 // Browsersync Tasks
@@ -50,7 +50,7 @@ function browsersyncReload(cb) {
 // Watch Task
 function watchTask() {
   // watch('*.html', { ignoreInitial: false }, browsersyncReload);
-  watch('assets/js/**/*.js', { ignoreInitial: false }, series(jsTask));
+  // watch('assets/js/*.js', { ignoreInitial: false }, series(jsTask));
   watch('assets/scss/**/*.scss', { ignoreInitial: false }, series(scssTask));
 }
 

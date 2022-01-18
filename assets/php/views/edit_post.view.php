@@ -23,15 +23,18 @@
                     <div class="mb-3">
                         <label class="form-label" for="info">Description</label>
 
-                        <textarea class="form-control" name="info" id="info"><?php 
+                        <textarea class="form-control" name="info" id="info" maxlength="200" style="resize: none;" aria-describedby="postDescription"><?php 
                             echo $post['info']; 
                         ?></textarea>
+                        <div id="postDescription" class="form-text">
+                            Maximum 200 characters
+                        </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" for="content">Content</label>
 
-                        <textarea class="form-control" maxlength="200" name="content" id="content"><?php 
+                        <textarea class="form-control" name="content" id="content"><?php 
                             echo $post['content']; 
                         ?></textarea>
                     </div>
@@ -39,10 +42,12 @@
                     <div class="mb-3">
                         <label class="form-label" for="thumb">Image of the post</label>
 
-                        <input accept="image/.jpg, image/.png" id="thumb" name="thumb" class="form-control" type="file">
+                        <input accept="image/.jpg, image/.png" id="thumb" name="thumb" class="form-control" type="file" aria-describedby="postThumb">
 
                         <input name="saved_thumb" value="<?php echo $post['image']; ?>" type="hidden">
-
+                        <div id="postThumb" class="form-text">
+                            Only images .jpg or .png
+                        </div>
                     </div>
 
                     <div class="row mb-3">
