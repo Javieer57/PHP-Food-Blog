@@ -56,7 +56,7 @@
     tinymce.init({
         selector: '#content',
         plugins: 'link',
-        default_link_target: '_blank'
+        // default_link_target: '_blank'
     });
     </script>
 

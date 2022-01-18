@@ -5,7 +5,7 @@
 validateLogin();
 
 // get all posts from the database
-$articulos = getAllPosts();
+$posts = getAllPosts();
 
 // calculate the number of pages for the pagination
 $total_pages = calcPages('all'); 

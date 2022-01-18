@@ -7,29 +7,39 @@
 
     <main class="container my-5">
         <div class="row">
-            <div class="col">
-                <h2 class="card__title">Admin</h2>
-                <a href="nuevo_post.php">Nuevo post</a>
-
+            <div class="col d-flex align-items-center justify-content-between">
+                <h2 class="card__title h1">Admin</h2>
+                <a class="btn btn-dark" href="new_post.php">New post</a>
             </div>
         </div>
+
         <div class="row my-5">
-            <div class="col">
-                <!-- :::::: Start Posts :::::: -->
-                <?php foreach($articulos as $articulo): ?>
-                <div class="mb-4">
-                    <h3 class="h4 font-title">
-                        <?php echo $articulo['title']; ?>
+            <!-- :::::: Start Posts :::::: -->
+            <div class="row">
+                <?php foreach($posts as $post): ?>
+                <div class="col-12 mb-3 d-flex justify-content-between align-items-center py-4 border">
+                    <h3 class="h4 font-title mb-0">
+                        <?php echo $post['title']; ?>
                     </h3>
 
-                    <a href="edit_post.php?id=<?php echo $articulo['id']; ?>">Editar</a>
-                    <a href="single.php?id=<?php echo $articulo['id']; ?>">Ver</a>
-                    <a href="borrar.php?id=<?php echo $articulo['id']; ?>">Borrar</a>
+                    <div class="actions d-flex gap-3">
+                        <a class="d-flex flex-column text-center btn gap-2 " href="<?php echo BASE_URL . "edit.php?id=" . $post['id']; ?>">
+                            <i class="fa-fw mx-auto fas fa-edit"></i>
+                            Edit
+                        </a>
+                        <a class="d-flex flex-column text-center btn gap-2 " href="<?php echo BASE_URL . "single.php?id=" . $post['id']; ?>">
+                            <i class="fa-fw mx-auto fas fa-eye"></i>
+                            See
+                        </a>
+                        <a class="d-flex flex-column text-center btn gap-2 " href="<?php echo BASE_URL . "delete.php?id=" . $post['id']; ?>">
+                            <i class="fa-fw mx-auto fas fa-trash"></i>
+                            Delete
+                        </a>
+                    </div>
                 </div>
                 <?php endforeach; ?>
-                <!-- :::::: End Posts :::::: -->
-
             </div>
+            <!-- :::::: End Posts :::::: -->
         </div>
     </main>
 

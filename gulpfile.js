@@ -1,4 +1,4 @@
-const {src, dest, watch, series} = require("gulp");
+const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const terser = require('gulp-terser');
 const postcss = require("gulp-postcss");
@@ -8,32 +8,32 @@ const browsersync = require("browser-sync").create();
 
 // Sass Task
 function scssTask() {
-	var plugins = [
-		autoprefixer({ Browserslist: ["last 3 version"]  })
-	];
+  var plugins = [
+    autoprefixer({ Browserslist: ["last 3 version"] })
+  ];
 
-  return src("app/scss/styles.scss", { sourcemaps: true })
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(postcss(plugins))
-		.pipe(dest("dist", { sourcemaps: '.' }));
+  return src("assets/scss/styles.scss", { sourcemaps: true })
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(postcss(plugins))
+    .pipe(dest("assets/css/", { sourcemaps: '.' }));
 }
 
 // Minify img Task
 function imagesTask() {
-  return src("app/img/*")
+  return src("assets/img/*")
     .pipe(imagemin())
-    .pipe(dest("app/img"));
+    .pipe(dest("assets/img"));
 }
 
 // JS Task
 function jsTask() {
-  	return src("app/js/script.js", { sourcemaps: true })
-      .pipe(terser())
-      .pipe(dest("dist", { sourcemaps: '.' }));
+  return src("assets/js/script.js", { sourcemaps: true })
+    .pipe(terser())
+    .pipe(dest("assets/js/", { sourcemaps: '.' }));
 }
 
 // Browsersync Tasks
-function browsersyncServe(cb){
+function browsersyncServe(cb) {
   browsersync.init({
     server: {
       baseDir: '.'
@@ -42,16 +42,16 @@ function browsersyncServe(cb){
   cb();
 }
 
-function browsersyncReload(cb){
+function browsersyncReload(cb) {
   browsersync.reload();
   cb();
 }
 
 // Watch Task
-function watchTask(){
+function watchTask() {
   // watch('*.html', { ignoreInitial: false }, browsersyncReload);
-  watch('app/js/**/*.js', { ignoreInitial: false }, series(jsTask));
-  watch('app/scss/**/*.scss', { ignoreInitial: false }, series(scssTask));
+  watch('assets/js/**/*.js', { ignoreInitial: false }, series(jsTask));
+  watch('assets/scss/**/*.scss', { ignoreInitial: false }, series(scssTask));
 }
 
 // Public Gulp task

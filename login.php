@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if ($user == $blog_admin['user'] && $pass == $blog_admin['password']) {
 		$_SESSION['user'] = $user;
-		header('Location: ./assets/php/admin.php');
+		header('Location: ./admin.php');
 	}
 }
 ?>

@@ -17,7 +17,7 @@ $blog_admin = array(
 );
 
 // number of post to show in index and index of admin
-$num_posts = 3;
+$num_posts = 6;
 
 // connect to database
 try {

@@ -18,6 +18,7 @@ cambiar en iconos con links
       </a>
 
 Mejorar editor de texto para links
+target de link
 
 
 Poppins (500)
