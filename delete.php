@@ -1,25 +1,19 @@
-<?php
+<!-- the first include should be config.php -->
+<?php require './assets/php/admin/config.php'; ?>
+<?php require 'functions.php'; ?>
 
-require './assets/php/admin/config.php'; 
-require '../functions.php'; 
-
+<?php 
 validateLogin();
 
 $id = sanitizeData($_GET['id']);
 
-if (!$conn) {
-	header('Location: ../error.php');
-}
-
 if (!isset($id) || empty($id)) {
-	header('Location: index.php');
+	header('Location: admin.php');
 }
 
-$sentencia = $conn->prepare('DELETE FROM articles WHERE id = :id');
-$sentencia->execute(array(":id" => $id));
+$sql = 'DELETE FROM articles WHERE id = :id';
+$statement = $conn->prepare($sql);
+$statement->execute(array(":id" => $id));
 
-header('Location: index.php');
-
-
-
+header('Location: admin.php');
 ?>
