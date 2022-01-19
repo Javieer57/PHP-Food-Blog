@@ -11,11 +11,6 @@ $bd_config = array(
 	'pass' => ''
 );
 
-$blog_admin = array(
-	'user' => 'Javier',
-	'password' => '123'
-);
-
 // number of post to show in index and index of admin
 $num_posts = 6;
 

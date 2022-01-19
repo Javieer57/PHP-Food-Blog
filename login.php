@@ -3,25 +3,32 @@
 <?php require 'functions.php'; ?>
 
 <?php
-/* Evitamos que se ingrese al formulario si ya está logeado */
-if (isset($_SESSION['user'])) {
-	header('Location: ./admin.php');
-}
+validateLogin();
 
-/* Validamos los datos que se hayan enviado por el formulario */
+// MySuperSafePassword!
+
+// validate the data that has been sent through the form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$user = sanitizeData($_POST['user']);
 	$pass = sanitizeData($_POST['pass']);
 	$errores = '';
 
 	if (empty($user) || empty($pass)) {
-		$errores = 'Por favor, captura todos los campos';
+		$errores = 'Please capture all fields';
+	} else {
+		$sql = 'SELECT * FROM users WHERE user = :user';
+		$statement = $conn->prepare($sql);
+		$statement->execute(array(':user' => $user));
+		$results = $statement->fetch();
+
+		if($results){
+			password_verify($pass, $results['password']) ? $_SESSION['user'] = $user : $errores = 'Incorrect data';
+		} else{
+			$errores = 'Incorrect data';
+		}
 	}
 
-	if ($user == $blog_admin['user'] && $pass == $blog_admin['password']) {
-		$_SESSION['user'] = $user;
-		header('Location: ./admin.php');
-	}
 }
 ?>
+
 <?php require './assets/php/views/login.view.php'; ?>
