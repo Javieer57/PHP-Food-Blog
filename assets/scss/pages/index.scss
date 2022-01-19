@@ -23,3 +23,19 @@
 		}
 	}
 }
+
+.post__body a {
+	@extend %transition;
+	color: var(--dark);
+	text-decoration: underline;
+}
+
+.post__body a:hover {
+	color: var(--gray-2);
+}
+
+.ratio,
+.ratio-21x9 {
+	background-size: cover;
+	background-position: center;
+}

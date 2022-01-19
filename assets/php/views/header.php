@@ -61,12 +61,6 @@
     });
     </script>
 
-    <style>
-    .post__body a {
-        color: darkturquoise;
-    }
-    </style>
-
     <!-- JS -->
     <script defer src="<?php echo BASE_URL; ?>./assets/js/vendor/jquery.min.js"></script>
     <script defer src="<?php echo BASE_URL; ?>./assets/js/plugin/owl.carousel.min.js"></script>
