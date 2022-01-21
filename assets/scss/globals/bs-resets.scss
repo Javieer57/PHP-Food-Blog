@@ -20,6 +20,11 @@
 	box-shadow: none;
 }
 
+a:hover {
+	@extend %transition;
+	color: var(--gray-2);
+}
+
 .dropdown-item {
 	@extend %transition;
 	padding: 16px 0;

@@ -1,8 +1,8 @@
-<!-- the first include should be config.php -->
-<?php require './assets/php/admin/config.php'; ?>
-<?php require 'functions.php'; ?>
+<?php 
+// the first include should be config.php
+require './assets/php/admin/config.php';
+require 'functions.php';
 
-<?php
 // return to index if there is no search
 if (!$_GET['search']) {
 	header('Location: index.php');
