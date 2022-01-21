@@ -19,19 +19,17 @@
             <div class="col offset-3 me-auto">
                 <a class="title_1 text_uppercase header__logo justify-content-center" href="<?php echo BASE_URL; ?>">MINIMAG</a>
             </div>
-            <div class="col d-flex gap-4">
-                <button class="header__icon reset-button">
+            <div class="col d-flex gap-4 align-items-center">
+                <form class="input-group" action="<?php echo BASE_URL; ?>search.php" method="GET">
+                    <input type="text" placeholder="Search a post" aria-label="Search" name="search" class="form-control border-0 border-bottom">
+                    <span id="basic-addon1" class="input-group-text border-0 border-bottom bg-transparent"><i class="fa-fw fas fa-search"></i></span>
+                </form>
+                <!-- <button class="header__icon reset-button">
                     <i class="fa-fw fas fa-search"></i>
-                </button>
-                <?php if(!isset($_SESSION['user'])): ?>
-                <a class="header__icon" href="<?php echo BASE_URL; ?>login.php">
-                    <i class="fa-fw fas fa-user"></i>
-                </a>
-                <?php else: ?>
-                <a class="header__icon" href="<?php echo BASE_URL; ?>logout.php">
+                </button> -->
+                <a class="header__icon" href="http://localhost/blog/logout.php">
                     <i class="fa-fw fas fa-sign-out-alt"></i>
                 </a>
-                <?php endif ?>
             </div>
         </div>
     </div>

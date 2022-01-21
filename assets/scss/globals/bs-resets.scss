@@ -16,6 +16,10 @@
 	}
 }
 
+.form-control:focus {
+	box-shadow: none;
+}
+
 .dropdown-item {
 	@extend %transition;
 	padding: 16px 0;
