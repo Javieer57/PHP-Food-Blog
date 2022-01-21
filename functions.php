@@ -1,26 +1,29 @@
 <?php
 
+/****************************
+ * 1- Conection functions
+ * 2- Data manipulation functions
+ * 3- Pagination functions
+ * 4- Posts functions
+****************************/
+
+
+/****************************
+ * 1- Conection functions
+****************************/
+
 /**
- * Connect to database
- * @param  array $bd_config general configuration for blog
- * @return PDO | false
+ * If the user is not logged in, return to index
  */
-// function conectarBD($bd_config){
-// 	try {
-// 		$conexion = new PDO(
-// 			"mysql:host={$bd_config['host']};
-// 			dbname={$bd_config['DB']}", 
-// 			$bd_config['user'], 
-// 			$bd_config['pass']
-// 		);
-// 		$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+function validateLogin(){
+	if (!isset($_SESSION['user'])) {
+		header('Location: login.php');
+	} 
+}
 
-// 		return $conexion;
-// 	} catch (PDOException $e) {
-// 		return false;
-// 	}
-// }
-
+/****************************
+ * 2- Data manipulation functions
+****************************/
 
 /**
  * Sanitize data to prevent SQL injections
@@ -36,6 +39,27 @@ function sanitizeData($data){
 	return $data;
 }
 
+/**
+ * Returns the date recorded in the database in an understandable format.
+ * @param  string $unformatted date in YYYY-MM-DD HH:MM:SS format (recorded in the database)
+ * @return string formated date
+ */
+function formatDate($unformatted){
+	$timestamp = strtotime($unformatted);
+
+	$months = array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+	$day = date('j', $timestamp);
+	$month = $months[date('m', $timestamp) - 1];
+	$year = date('o', $timestamp);
+	$formatted_date = "{$month} {$day}, {$year}";
+
+	return $formatted_date;
+}
+
+/****************************
+ * 3- Pagination functions
+****************************/
 
 /**
  * Calculate the current page for pagination
@@ -50,7 +74,6 @@ function currentPage(){
 
 	return $current_page;
 }
-
 
 /**
  * Calculate the number of pages for the pagination 
@@ -90,33 +113,9 @@ function calcPages($search_type, $search = ''){
 	return $number_pages;
 }
 
-
-/**
- * Returns the date recorded in the database in an understandable format.
- * @param  string $unformatted date in YYYY-MM-DD HH:MM:SS format (recorded in the database)
- * @return string formated date
- */
-function formatDate($unformatted){
-	$timestamp = strtotime($unformatted);
-
-	$months = array('January','February','March','April','May','June','July','August','September','October','November','December');
-
-	$day = date('j', $timestamp);
-	$month = $months[date('m', $timestamp) - 1];
-	$year = date('o', $timestamp);
-	$formatted_date = "{$month} {$day}, {$year}";
-
-	return $formatted_date;
-}
-
-/**
- * If the user is not logged in, return to index
- */
-function validateLogin(){
-	if (!isset($_SESSION['user'])) {
-		header('Location: login.php');
-	} 
-}
+/****************************
+ * 4- Posts functions
+****************************/
 
 /**
  * Returns all posts in the database selected by the number of posts to display

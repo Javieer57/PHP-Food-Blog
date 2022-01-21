@@ -1,34 +1,36 @@
-<!-- the first include should be config.php -->
-<?php require './assets/php/admin/config.php'; ?>
-<?php require 'functions.php'; ?>
+<?php 
+// the first include should be config.php
+require './assets/php/admin/config.php';
+require 'functions.php';
 
-<?php
-validateLogin();
+// prevent the user to access in login if is already logged
+if (isset($_SESSION['user'])) {
+	header('Location: admin.php');
+}
 
-// MySuperSafePassword!
-
-// validate the data that has been sent through the form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$user = sanitizeData($_POST['user']);
 	$pass = sanitizeData($_POST['pass']);
-	$errores = '';
+	$errors = '';
 
 	if (empty($user) || empty($pass)) {
-		$errores = 'Please capture all fields';
+		$errors = 'Please capture all fields';
 	} else {
-		$sql = 'SELECT * FROM users WHERE user = :user';
+		$sql = 
+		'SELECT * FROM users 
+		WHERE user = :user';
 		$statement = $conn->prepare($sql);
 		$statement->execute(array(':user' => $user));
 		$results = $statement->fetch();
 
 		if($results){
-			password_verify($pass, $results['password']) ? $_SESSION['user'] = $user : $errores = 'Incorrect data';
+			password_verify($pass, $results['password']) ? $_SESSION['user'] = $user : $errors = 'Incorrect data';
+			header('Location: admin.php');
 		} else{
-			$errores = 'Incorrect data';
+			$errors = 'Incorrect data';
 		}
 	}
-
 }
-?>
 
-<?php require './assets/php/views/login.view.php'; ?>
+require './assets/php/views/login.view.php';
+?>

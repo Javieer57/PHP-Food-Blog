@@ -1,13 +1,13 @@
-<!-- the first include should be config.php -->
-<?php require './assets/php/admin/config.php'; ?>
-<?php require 'functions.php'; ?>
-
-<?php
+<?php 
+// the first include should be config.php
+require './assets/php/admin/config.php';
+require 'functions.php';
 
 /* Bug: does not accept other image that have the same name of one image saved */
 
 validateLogin();
 
+// if there is a post method, update the database
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$id = sanitizeData($_POST['id']);
 	$title = sanitizeData($_POST['title']);
@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$saved_thumb = sanitizeData($_POST['saved_thumb']);
 
 
+	// if there is not new thumb, take the previous one
 	if (empty($thumb)) {
 			$thumb = $saved_thumb;
 	} else{
@@ -28,11 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$sql = 
-		"UPDATE articles 
-		SET title = :title , info = :info, content = :content, image = :thumb
-		WHERE id = :id";
+		'UPDATE articles 
+		SET title = :title , 
+		info = :info, 
+		content = :content, 
+		image = :thumb
+		WHERE id = :id';
 	$statement = $conn->prepare($sql);
-
 	$statement->execute(array(
 		":title" => $title, 
 		":info" => $info,
@@ -42,12 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	));
 
 	header('Location: admin.php');
-} else {
-	$post = getPost($_GET['id']);
-	if (!$post) {
-		header('Location: error.php');
-	}
-}
-?>
+} 
 
-<?php require './assets/php/views/edit_post.view.php'; ?>
+// if there ir not id in the URL, return to admin  
+$post_id = getPost($_GET['id']);
+if (!$post_id) {
+	header('Location: admin.php');
+}
+
+require './assets/php/views/edit_post.view.php';
+?>
