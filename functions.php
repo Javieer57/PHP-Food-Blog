@@ -182,7 +182,7 @@ function getPostsBySearch($search){
 	$sql = "SELECT * FROM articles 
 		WHERE title LIKE :search
 		OR info LIKE :search
-		OR content LIKE :search
+		-- OR content LIKE :search
 		LIMIT $start, $num_posts";
 	$statement = $conn->prepare($sql);
 	$statement->execute(array(
