@@ -3,6 +3,7 @@ session_start();
 
 define('BASE_URL', 'http://localhost/blog/');
 define('IMG_DIRECTION', 'http://localhost/blog/assets/img/');
+define('TINY_EDITOR', 'https://cdn.tiny.cloud/1/bguxgewbckohq4tizpp0go6q2vkkqgnjrxzftqlfs8xfbj44/tinymce/5/tinymce.min.js');
 
 $bd_config = array(
 	'host' => 'localhost',

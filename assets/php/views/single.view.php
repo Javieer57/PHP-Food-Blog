@@ -14,6 +14,7 @@
                 </div>
 
                 <h1 class="card__title h1" style="font-size: 2.5rem;"><?php echo $post['title']; ?></h1>
+
                 <small class="text-muted"><?php echo formatDate($post['date']); ?></small>
 
                 <div class="post__body mt-4">

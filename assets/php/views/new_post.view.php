@@ -22,7 +22,9 @@
                     <div class="mb-3">
                         <label class="form-label" for="info">Description</label>
 
-                        <textarea class="form-control" name="info" id="info" maxlength="200" style="resize: none;" aria-describedby="postDescription"></textarea>
+                        <textarea class="form-control" name="info" id="info" maxlength="200" style="resize: none;" aria-describedby="postDescription"><?php 
+                            echo isset($_POST['info']) ? $_POST['info'] : '';
+                        ?></textarea>
                         <div id="postDescription" class="form-text">
                             Maximum 200 characters
                         </div>
@@ -31,7 +33,9 @@
                     <div class="mb-3">
                         <label class="form-label" for="content">Content</label>
 
-                        <textarea class="form-control" name="content" id="content"><?php echo isset($_POST['content']) ? $_POST['content'] : '' ?></textarea>
+                        <textarea class="form-control" name="content" id="content"><?php 
+                            echo isset($_POST['content']) ? $_POST['content'] : '';
+                        ?></textarea>
                     </div>
 
                     <div class="mb-3">

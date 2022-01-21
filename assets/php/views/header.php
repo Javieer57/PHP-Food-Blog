@@ -4,10 +4,10 @@
 <head>
     <meta charset='utf-8' />
     <meta name='author' content='Javier Eufracio' />
-    <meta name='description' content='An amazing new project.' />
-    <meta name='keywords' content='web developer, front-end developer, css3, html5, responsive, javascript, project' />
+    <meta name='description' content='A fake food blog made with PHP, Bootstrap and MySQL.' />
+    <meta name='keywords' content='web developer, front-end developer, css3, html5, responsive, javascript, blog, php, bootstrap, MySQL' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <link rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon' />
+    <link rel='shortcut icon' href='<?php echo IMG_DIRECTION; ?>favicon.ico' type='image/x-icon' />
 
     <!-- <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -46,11 +46,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Main Style -->
-    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>./assets/css/plugin/owl.carousel.min.css' />
-    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>./assets/css/styles.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>assets/css/plugin/owl.carousel.min.css' />
+    <link rel='stylesheet' type='text/css' href='<?php echo BASE_URL; ?>assets/css/styles.css' />
 
     <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/bguxgewbckohq4tizpp0go6q2vkkqgnjrxzftqlfs8xfbj44/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="<?php echo TINY_EDITOR ?>" referrerpolicy="origin"></script>
 
     <script>
     tinymce.init({
@@ -62,7 +62,7 @@
     </script>
 
     <!-- JS -->
-    <script defer src="<?php echo BASE_URL; ?>./assets/js/vendor/jquery.min.js"></script>
-    <script defer src="<?php echo BASE_URL; ?>./assets/js/plugin/owl.carousel.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>assets/js/vendor/jquery.min.js"></script>
+    <script defer src="<?php echo BASE_URL; ?>assets/js/plugin/owl.carousel.min.js"></script>
 
-    <script defer src='<?php echo BASE_URL; ?>./assets/js/main.js'></script>
+    <script defer src='<?php echo BASE_URL; ?>assets/js/main.js'></script>

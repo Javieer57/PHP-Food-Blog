@@ -45,13 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	));
 
 	header('Location: admin.php');
-} 
-
-// if there ir not id in the URL, return to admin  
-$post_id = getPost($_GET['id']);
-if (!$post_id) {
-	header('Location: admin.php');
+} else {
+	$post = getPost($_GET['id']);
+	
+	if (!isset($post)) {
+		header('Location: admin.php');
+	}
 }
+
 
 require './assets/php/views/edit_post.view.php';
 ?>
