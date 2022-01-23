@@ -1,7 +1,8 @@
 <?php
 // set url to work with and without a search term
 $search_url = isset($_GET['search']) ? "search={$_GET['search']}&" : '';
-$complete_url_pagination = "{$_SERVER['PHP_SELF']}?{$search_url}p=";
+$current_page = currentPage();
+$complete_url_pagination = "?{$search_url}p=";
 ?>
 
 <!-- :::::: Start Pagination :::::: -->
@@ -18,7 +19,7 @@ $complete_url_pagination = "{$_SERVER['PHP_SELF']}?{$search_url}p=";
                     </li>
                     <?php else: ?>
                     <li class="page-item text-uppercase">
-                        <a class="page-link" href="<?php echo $complete_url_pagination . currentPage() - 1; ?>">Previous</a>
+                        <a class="page-link" href="<?php echo "?{$search_url}p=" . ($current_page - 1); ?>">Previous</a>
                     </li>
                     <?php endif; ?>
 
@@ -44,7 +45,7 @@ $complete_url_pagination = "{$_SERVER['PHP_SELF']}?{$search_url}p=";
                     </li>
                     <?php else: ?>
                     <li class="page-item text-uppercase">
-                        <a class="page-link" href="<?php echo $complete_url_pagination . currentPage() + 1; ?>">Next</a>
+                        <a class="page-link" href="<?php echo "?{$search_url}p=" . ($current_page + 1); ?>">Next</a>
                     </li>
                     <?php endif; ?>
 
