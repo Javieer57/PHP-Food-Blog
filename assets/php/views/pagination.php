@@ -12,7 +12,7 @@ $complete_url_pagination = "?{$search_url}p=";
             <nav aria-label="Posts navegation">
                 <ul class="pagination justify-content-center">
 
-                    <!-- if the current page is not 1, enable 'previous' step -->
+                    <!-- if the current page is not 1, enable 'previous' -->
                     <?php if(currentPage() === 1): ?>
                     <li class="page-item disabled text-uppercase">
                         <span class="page-link">Previous</span>
@@ -38,7 +38,7 @@ $complete_url_pagination = "?{$search_url}p=";
                     <?php endif; ?>
                     <?php endfor; ?>
 
-                    <!-- if the current page is not the last, enable 'next' step -->
+                    <!-- if the current page is not the last, enable 'next' -->
                     <?php if(currentPage() === (int)$total_pages): ?>
                     <li class="page-item disabled text-uppercase">
                         <span class="page-link">Next</span>
