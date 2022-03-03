@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-define('BASE_URL', 'http://localhost/blog/');
-define('IMG_DIRECTION', 'http://localhost/blog/assets/img/');
+define('BASE_URL', 'http://localhost/PHP-Food-Blog/');
+define('IMG_DIRECTION', BASE_URL . 'assets/img/');
 define('TINY_EDITOR', 'https://cdn.tiny.cloud/1/bguxgewbckohq4tizpp0go6q2vkkqgnjrxzftqlfs8xfbj44/tinymce/5/tinymce.min.js');
 
 $bd_config = array(
