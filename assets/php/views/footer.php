@@ -2,43 +2,43 @@
 <footer class="footer mt-5">
     <div class="owl-carousel">
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/dragne-marius-EdzsUFqHbaY-unsplash.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-1.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/sylwia-forysinska-jJ8EYTq26Ak-unsplash.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-2.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/louis-hansel-Si5lP0g-sR8-unsplash.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-3.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/8.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-4.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/raka-diraka-_jxyzXck9uY-unsplash.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-5.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/12.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-6.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
         </a>
         <a href="#" class="gallery__photo">
-            <img src="<?php echo BASE_URL; ?>assets/img/9.jpg" alt="" />
+            <img src="<?php echo IMG_DIRECTION ?>carousel/carousel-blog-7.jpg" alt="" />
             <div class="gallery__fade">
                 <i class="gallery__icon" data-feather="instagram"></i>
             </div>
@@ -47,22 +47,14 @@
 
     <div class="container my-5">
         <div class="row row-cols-auto align-items-center">
-            <div class="col-auto d-flex mx-auto gap-4">
-                <a class="footer__link fw-bold text-uppercase" href="javascript:;">
-                    <i class="align-middle fa-fw fab fa-facebook-f"></i>
-                    facebook
+            <div class="col-auto d-flex flex-wrap mx-auto gap-4 justify-content-center">
+                <a class="footer__link fw-bold text-uppercase d-flex flex-nowrap" href="javascript:;"><i aria-hidden="true" class=" me-2 bi bi-facebook"></i> facebook
                 </a>
-                <a class="footer__link fw-bold text-uppercase" href="javascript:;">
-                    <i class="align-middle fa-fw fab fa-youtube"></i>
-                    youtube
+                <a class="footer__link fw-bold text-uppercase d-flex flex-nowrap" href="javascript:;"><i aria-hidden="true" class=" me-2 bi bi-youtube"></i> youtube
                 </a>
-                <a class="footer__link fw-bold text-uppercase" href="javascript:;">
-                    <i class="align-middle fa-fw fab fa-twitter"></i>
-                    twitter
+                <a class="footer__link fw-bold text-uppercase d-flex flex-nowrap" href="javascript:;"><i aria-hidden="true" class=" me-2 bi bi-twitter"></i> twitter
                 </a>
-                <a class="footer__link fw-bold text-uppercase" href="javascript:;">
-                    <i class="align-middle fa-fw fab fa-instagram"></i>
-                    instagram
+                <a class="footer__link fw-bold text-uppercase d-flex flex-nowrap" href="javascript:;"><i aria-hidden="true" class=" me-2 bi bi-instagram"></i> instagram
                 </a>
             </div>
         </div>

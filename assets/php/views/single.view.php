@@ -10,7 +10,7 @@
     <main class="container my-4">
         <div class="row">
             <div class="col">
-                <div class="ratio ratio-21x9 mb-5" style="background-image: url(<?php echo IMG_DIRECTION . $post['image']; ?>);">
+                <div class="ratio ratio-21x9 mb-5" style="background-image: url(<?php echo IMG_DIRECTION . 'blog/list/' . $post['image']; ?>);">
                 </div>
 
                 <h1 class="card__title h1" style="font-size: 2.5rem;"><?php echo $post['title']; ?></h1>

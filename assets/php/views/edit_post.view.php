@@ -53,8 +53,8 @@
                     <div class="row mb-3">
                         <p>Actual image</p>
 
-                        <div class="col-2">
-                            <img src="./assets/img/<?php echo $post['image']; ?>" alt="">
+                        <div class="col col-sm-6 col-md-4 col-lg-2">
+                            <img src="<?php echo IMG_DIRECTION . 'blog/list/' . $post['image']; ?>" alt="">
                         </div>
                     </div>
 

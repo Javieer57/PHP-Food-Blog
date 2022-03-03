@@ -7,7 +7,7 @@
 
     <section class="container my-5">
         <div class="row">
-            <div class="col-5 mx-auto">
+            <div class="col mx-auto col-md-8 col-lg-6">
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login" class="needs-validation" novalidate>
                     <div class="row mb-3">
                         <div class="col-2">

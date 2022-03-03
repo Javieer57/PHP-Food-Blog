@@ -16,8 +16,8 @@
         <!-- :::::: Start Posts :::::: -->
         <div class="row my-5">
             <?php foreach($posts as $post): ?>
-            <div class="col-12 mb-3 d-flex justify-content-between align-items-center py-4 border">
-                <h3 class="h4 font-title mb-0">
+            <div class="col-12 mb-3 d-flex justify-content-between align-items-center py-4 border flex-column flex-md-row gap-md-3">
+                <h3 class="h4 font-title mb-4 mb-md-0 text-center text-md-start">
                     <?php echo $post['title']; ?>
                 </h3>
 

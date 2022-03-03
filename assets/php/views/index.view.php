@@ -8,13 +8,13 @@
 
     <!-- :::::: Start Posts :::::: -->
     <main class="container my-5">
-        <div class="row row-cols-3 g-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
             <?php foreach($posts as $post): ?>
             <section class="col">
                 <div class="card text-center h-100">
-                    <img class="card__img card-img-top" src="<?php echo IMG_DIRECTION . $post['image']; ?>" alt="">
+                    <img class="card__img card-img-top" src="<?php echo IMG_DIRECTION . 'blog/list/' . $post['image']; ?>" alt="">
                     <div class="card-body pb-0">
-                        <span class="card-category text-uppercase mb-2 d-block ">Food</span>
+                        <!-- <span class="card-category text-uppercase mb-2 d-block ">Food</span> -->
                         <a href="single.php?id=<?php echo $post['id']; ?>">
                             <h3 class="card__title text-capitalize d-inline-block mb-0">
                                 <?php echo $post['title']; ?>
